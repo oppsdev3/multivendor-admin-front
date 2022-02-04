@@ -1,0 +1,8 @@
+.addButton {
+     display: flex;
+     background-color: white;
+     border-radius: 10px;
+     border: 0;
+     margin: 10px;
+     color: tomato;
+   }
