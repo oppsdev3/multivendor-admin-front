@@ -7,22 +7,31 @@ import { useHistory } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 
+
 const OtpVerification = () => {
-     const [registerData, setRegisterData] = useState({});
+     const [phone,setPhone] = useState('')
+     const [otp,setOtp] = useState('')
      const [error, setError] = useState('');
      const history = useHistory();
      const location = useLocation();
-
-     const handleOnBlur = e => {
-          const field = e.target.name;
-          const value = e.target.value;
-          const newRegisterData = { ...registerData };
-          newRegisterData[field] = value;
-          console.log(newRegisterData);
-          setRegisterData(newRegisterData);
+     const handleOnChangePhone = (e) => {
+          const phone = e.target.value
+          setPhone(phone)
         };
+
+     const handleOnChangeOtp = (e,data) =>{
+          const otp = e.target.value
+          setOtp(otp)
+        }
+        
       
         const handleSubmit = e => {
+               
+               const registerData ={
+                    phoneNo:Number(phone),
+                    otp:String(otp)
+               }
+               console.log(registerData)
           fetch('https://multivendorapi.herokuapp.com/api/admin/register/verify', {
             method: 'POST',
             headers: {
@@ -66,8 +75,8 @@ const OtpVerification = () => {
                                         id="outlined-required"
                                         label="Phone Number"
                                         sx={{ width: '75%', m: 1 }}
-                                        onBlur={handleOnBlur}
-                                        name="phoneNo"
+                                        onChange={handleOnChangePhone}
+                                        phone="phoneNo"
                                         helperText="Phone Number"
                                         variant="filled"
                                    />
@@ -77,8 +86,8 @@ const OtpVerification = () => {
                                         id="outlined-required"
                                         label="OTP"
                                         sx={{ width: '75%', m: 1 }}
-                                        onBlur={handleOnBlur}
-                                        name="otp"
+                                        onChange={handleOnChangeOtp}
+                                        otp="otp"
                                         helperText="OTP"
                                         variant="filled"
                                    />

@@ -23,6 +23,7 @@ const Register = () => {
         };
       
         const handleSubmit = e => {
+             console.log(registerData)
           fetch('https://multivendorapi.herokuapp.com/api/admin/register', {
             method: 'POST',
             headers: {

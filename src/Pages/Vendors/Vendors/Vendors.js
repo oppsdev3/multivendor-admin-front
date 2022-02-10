@@ -8,18 +8,10 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import Grid from '@mui/material/Grid';
-import { Switch,Link, Route, useRouteMatch } from 'react-router-dom';
-import VendorManage from '../VendorAdd/VendorManage/VendorManage';
-import VendorsPending from '../VendorsPending/VendorsPending';
-import Vendor from './../Vendor/Vendor';
-import Profile from '../../Profile/Profile/Profile';
-import List from '@mui/material/List';
-import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
-import MessageIcon from '@mui/icons-material/Message';
-import Messages from '../../Messages/Messages/Messages';
+
 import  Typography  from '@mui/material/Typography';
+import VendorsLink from '../VendorsLink/VendorsLink';
+import VendorsRoute from '../VendorsRoute/VendorsRoute';
 
 
 
@@ -31,7 +23,7 @@ import  Typography  from '@mui/material/Typography';
 const drawerWidth = 200;
 
 const Vendors = (props) => {
-     let { path, url } = useRouteMatch();
+    
      const { window } = props;
      const [mobileOpen, setMobileOpen] = React.useState(false);
    
@@ -44,26 +36,7 @@ const Vendors = (props) => {
          
           <Toolbar />
    
-          <List>
-               <Link exact to="/vendors" style={{ textDecoration: 'none' }}>
-               <Button color="inherit" sx={{ mb: 2, ml: 1 }}>
-                    <VerifiedUserIcon sx={{mr:1}}></VerifiedUserIcon>
-                    Vendors
-               </Button>
-               </Link>
-               <Link exact to={`${url}/messages`} style={{ textDecoration: 'none' }}>
-               <Button color="inherit" sx={{ mb: 2 }}>
-                    <MessageIcon sx={{mr:1}}></MessageIcon>
-                    Messages
-               </Button>
-               </Link>
-               <Link exact to={`${url}/profile`} style={{ textDecoration: 'none' }}>
-               <Button color="inherit" sx={{ mb: 2 }}>
-               <AccountCircleIcon sx={{mr:1}}></AccountCircleIcon>
-                    Profile
-               </Button>
-               </Link>
-         </List>
+          <VendorsLink></VendorsLink>
        </div>
      );
    
@@ -188,25 +161,7 @@ const Vendors = (props) => {
                }}
           >
           <Toolbar />
-          <Typography paragraph>
-               <Grid container spacing={2}>
-               {/* nested route */}
-                    <Grid item xs={12} md={12}>
-                         <Switch>
-                              <Route exact path="/vendors">
-                                   <Vendor></Vendor>
-                              </Route>
-                              <Route exact path={`${path}/messages`}>
-                                   <Messages></Messages>
-                              </Route>
-                              <Route exact path={`${path}/profile`}>
-                                   <Profile></Profile>
-                              </Route>
-                              
-                         </Switch>
-                    </Grid>
-               </Grid>
-          </Typography>
+          <VendorsRoute></VendorsRoute>
         </Box>
       </Box> 
           </>
