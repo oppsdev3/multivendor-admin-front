@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Login from './Pages/Login/Login/Login';
+import OtpVerification from './Pages/Login/OtpVerification/OtpVerification';
+import Register from './Pages/Login/Register/Register';
 import Vendors from './Pages/Vendors/Vendors/Vendors';
 
 function App() {
@@ -9,12 +10,15 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path='/'>
-            <Login></Login>
+            <Register></Register>
           </Route>
-          <Route exact path='/login'>
-            <Login></Login>
+          <Route exact path='/register'>
+            <Register></Register>
           </Route>
-          <Route  path='/vendors'>
+          <Route exact path='/otp'>
+            <OtpVerification></OtpVerification>
+          </Route>
+          <Route path='/vendors'>
             <Vendors></Vendors>
           </Route>
           

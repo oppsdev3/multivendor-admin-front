@@ -7,8 +7,8 @@ import { useHistory } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 
-const Login = () => {
-     const [loginData, setLoginData] = useState({});
+const OtpVerification = () => {
+     const [registerData, setRegisterData] = useState({});
      const [error, setError] = useState('');
      const history = useHistory();
      const location = useLocation();
@@ -16,40 +16,38 @@ const Login = () => {
      const handleOnBlur = e => {
           const field = e.target.name;
           const value = e.target.value;
-          const newLoginData = { ...loginData };
-          newLoginData[field] = value;
-          console.log(newLoginData);
-          setLoginData(newLoginData);
+          const newRegisterData = { ...registerData };
+          newRegisterData[field] = value;
+          console.log(newRegisterData);
+          setRegisterData(newRegisterData);
         };
       
         const handleSubmit = e => {
-          // fetch('', {
-          //   method: 'POST',
-          //   headers: {
-          //     'content-type': 'application/json',
-          //   },
-          //   body: JSON.stringify(loginData),
-          // })
-          //   .then(res => res.json())
-          //   .then(info => {
-          //     let value = info.token;
-          //     console.log(info.error);
-          //      if (value) {
-          //           localStorage.setItem('token', value);
-          //           const destination = location?.state?.from || '/dashboard';
-          //           history.replace(destination);
-          //      } else {
-          //           setError(info.error);
-          //     }
+          fetch('https://multivendorapi.herokuapp.com/api/admin/register/verify', {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json',
+            },
+            body: JSON.stringify(registerData),
+          })
+            .then(res => res.json())
+            .then(info => {
+              let value = info.token;
+              console.log(info);
+               if (value) {
+                    localStorage.setItem('token', value);
+                    const destination = location?.state?.from || '/vendors';
+                    history.replace(destination);
+               } else {
+                    setError(info.error);
+              }
              
-          //   });
-          const destination = location?.state?.from || '/vendors';
-          history.replace(destination);
-          e.preventDefault();
+            });
+          e.preventDefault()
         };
      return (
           <>
-               <Container className="login-style">
+              <Container className="login-style">
                     
                     <Grid container spacing={2}>
                          <Grid sx={{ width: '100%', mt: 10 }} item xs={12} md={6}>
@@ -60,30 +58,28 @@ const Login = () => {
                                         variant="body1"
                                         gutterBottom
                                    >
-                                        Please Login
+                                        Please Register
                                    </Typography>
                                    <TextField
                                         required
                                         size="small"
                                         id="outlined-required"
-                                        label="Email"
+                                        label="Phone Number"
                                         sx={{ width: '75%', m: 1 }}
                                         onBlur={handleOnBlur}
-                                        name="email"
-                                        helperText="Email ID / Phone Number"
+                                        name="phoneNo"
+                                        helperText="Phone Number"
                                         variant="filled"
                                    />
                                    <TextField
                                         required
                                         size="small"
-                                        id="outlined-password-input"
-                                        label="Password"
-                                        type="password"
-                                        name="password"
-                                        onBlur={handleOnBlur}
-                                        autoComplete="current-password"
+                                        id="outlined-required"
+                                        label="OTP"
                                         sx={{ width: '75%', m: 1 }}
-                                        helperText="Password"
+                                        onBlur={handleOnBlur}
+                                        name="otp"
+                                        helperText="OTP"
                                         variant="filled"
                                    />
                                    <Button
@@ -104,9 +100,9 @@ const Login = () => {
                          <Alert severity="success">user logged in successfully</Alert>
                     )}
                    
-               </Container>  
+               </Container>      
           </>
      );
 };
 
-export default Login;
+export default OtpVerification;
