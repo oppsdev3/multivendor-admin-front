@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
 import Button from '@mui/material/Button';
-import VendorView from './../VendorView/VendorView';
 import VendorManage from '../VendorAdd/VendorManage/VendorManage';
+import Box from '@mui/material/Box';
 import './Vendor.css'
+import VendorAll from '../VendorAll/VendorAll';
 
 const Vendor = () => {
      let { url } = useRouteMatch();
@@ -24,9 +25,13 @@ const Vendor = () => {
                               Pending Vendors
                          </Button>
                     </Link>
-                    <VendorManage></VendorManage>
+                    <Box >
+                         <VendorManage></VendorManage>
+                    </Box>
                </div>
-               <VendorView></VendorView>
+               <Box sx={{mt:4}}>
+                    <VendorAll></VendorAll>
+               </Box>
           </div>
      );
 };

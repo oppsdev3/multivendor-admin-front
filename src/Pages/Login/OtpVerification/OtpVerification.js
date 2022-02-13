@@ -26,12 +26,13 @@ const OtpVerification = () => {
         
       
         const handleSubmit = e => {
-               
                const registerData ={
                     phoneNo:Number(phone),
                     otp:String(otp)
                }
                console.log(registerData)
+
+               
           fetch('https://multivendorapi.herokuapp.com/api/admin/register/verify', {
             method: 'POST',
             headers: {

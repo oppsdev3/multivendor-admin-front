@@ -1,4 +1,5 @@
 import React from 'react';
+import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
@@ -8,15 +9,14 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import VendorProducts from '../VendorDetails/VendorProducts/VendorProducts';
-import VendorProfile from '../VendorDetails/VendorProfile/VendorProfile';
+import ProductEdit from '../ProductEdit/ProductEdit';
+import ProductDelete from '../ProductDelete/ProductDelete';
 
 
 function Row(props) {
-     const { vendor } = props;
+     const { product } = props;
      const [open, setOpen] = React.useState(false);
 
      return (
@@ -31,18 +31,18 @@ function Row(props) {
                {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                </IconButton>
           </TableCell>
-          <TableCell align="center">{vendor.name}</TableCell>
-          <TableCell align="center">{vendor.email}</TableCell>
-          <TableCell align="center">{vendor.phone}</TableCell>
-          <TableCell align="center">{vendor.role}</TableCell>
-          <TableCell align="center">{vendor.address}</TableCell>
+          <TableCell align="center">{product.title}</TableCell>
+          <TableCell align="center">{product.price}</TableCell>
+          <TableCell align="center">{product.sold}</TableCell>
+          <TableCell align="center">{product.description}</TableCell>
+          <TableCell align="center">{product.views}</TableCell>
           </TableRow>
           <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
                <Collapse in={open} timeout="auto" unmountOnExit>
-               <Box sx={{ margin: 1 }}>
-                    <VendorProfile></VendorProfile>
-                    <VendorProducts vendor={vendor}></VendorProducts>
+               <Box sx={{ margin: 2, display:'flex' }}>
+                    <ProductEdit></ProductEdit>
+                    <ProductDelete></ProductDelete>
                </Box>
                </Collapse>
           </TableCell>
@@ -51,9 +51,8 @@ function Row(props) {
      );
      }
 
-
-
-const VendorView = ({vendors}) => {
+const Product = ({products}) => {
+     console.log(products)
      return (
           <>
                <TableContainer component={Paper}>
@@ -61,17 +60,17 @@ const VendorView = ({vendors}) => {
                     <TableHead>
                          <TableRow>
                          <TableCell />
-                         <TableCell align="center">Name</TableCell>
-                         <TableCell align="center">Email</TableCell>
-                         <TableCell align="center">Phone</TableCell>
-                         <TableCell align="center">Role</TableCell>
-                         <TableCell align="center">Address</TableCell>
+                         <TableCell align="center">Title</TableCell>
+                         <TableCell align="center">Price</TableCell>
+                         <TableCell align="center">Sold</TableCell>
+                         <TableCell align="center">Description</TableCell>
+                         <TableCell align="center">Views</TableCell>
                          </TableRow>
                     </TableHead>
                     <TableBody>
-                         {vendors.map((vendor) => (
-                         <Row key={vendor._id} vendor={vendor} />
-                         ))}
+                         {products.map((product) => (
+                              <Row key={product._id} product={product} />
+                              ))}
                     </TableBody>
                     </Table>
                </TableContainer>
@@ -79,4 +78,4 @@ const VendorView = ({vendors}) => {
      );
 };
 
-export default VendorView;
+export default Product;
