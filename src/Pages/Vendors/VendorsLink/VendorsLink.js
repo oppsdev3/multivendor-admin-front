@@ -5,12 +5,13 @@ import List from '@mui/material/List';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
 import GroupIcon from '@mui/icons-material/Group';
+import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 
 const VendorsLink = () => {
      let {  url } = useRouteMatch();
      return (
           <>
-          <List>
+          <List sx={{mt:5}}>
                <Link exact to="/vendors" style={{ textDecoration: 'none' }}>
                     <Button color="inherit" sx={{ mb: 2, mr:2 }}>
                          <VerifiedUserIcon sx={{mr:1}}></VerifiedUserIcon>
@@ -27,6 +28,12 @@ const VendorsLink = () => {
                     <Button color="inherit" sx={{ mb: 2 }}>
                          <GroupIcon sx={{mr:1}}></GroupIcon>
                          Customer
+                    </Button>
+               </Link>
+               <Link exact to={`${url}/contact`} style={{ textDecoration: 'none' }}>
+                    <Button color="inherit" sx={{ mb: 2,mr:1 }}>
+                         <ContactPhoneIcon sx={{mr:1}}></ContactPhoneIcon>
+                         Contact
                     </Button>
                </Link>
                

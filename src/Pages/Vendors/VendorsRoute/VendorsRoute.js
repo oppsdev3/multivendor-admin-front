@@ -5,6 +5,9 @@ import Vendor from './../Vendor/Vendor';
 import  Typography  from '@mui/material/Typography';
 import Products from '../../Products/Products/Products';
 import Customers from '../../Customers/Customers/Customers';
+import Contacts from './../../Contacts/Contacts/Contacts';
+
+
 
 
 const VendorsRoute = () => {
@@ -25,6 +28,10 @@ const VendorsRoute = () => {
                               <Route exact path={`${path}/customer`}>
                                    <Customers></Customers>
                               </Route>
+                              <Route exact path={`${path}/contact`}>
+                                   <Contacts></Contacts>
+                              </Route>
+                              
                          </Switch>
                     </Grid>
                </Grid>
