@@ -19,29 +19,23 @@ const style = {
    };
 
 const VendorForm = ({ open, handleClose }) => {
-
-     const [vendors, setVendors] = useState({});
+     const token = localStorage.getItem('token')
+     console.log(token)
      const { register, handleSubmit } = useForm();
      const onSubmit = data => {
           
-          const contactInfo = {
-               ...data,
-               status:'pending'
-          }
-          console.log(contactInfo)
-          fetch(``, {
+          console.log(data)
+          fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/allvendor`, {
                method: 'POST',
                headers: {
                     'content-type': 'application/json',
-                    'Accept': 'application/json'
+                    'Authorization': token
                },
-               body: JSON.stringify(contactInfo),
+               body: JSON.stringify(data),
                })
                .then(res => res.json())
                .then(info => {
                     console.log(info);
-                    setVendors(info.insertedId)
-                    alert("Contact added successfully")
                     handleClose();
                });
      }
@@ -64,6 +58,7 @@ const VendorForm = ({ open, handleClose }) => {
                                    required
                                    id="filled-required"
                                    label="name"
+                                   
                                    defaultValue=""
                                    variant="filled"
                                    size='small' {...register("name", { required: true, maxLength: 20 })} />
@@ -72,20 +67,12 @@ const VendorForm = ({ open, handleClose }) => {
                                    sx={{mb:3,width:'75%'}}  
                                    required
                                    id="filled-required"
-                                   label="email"
+                                   label="img-url"
                                    defaultValue=""
+                                  
                                    variant="filled"
                                    size='small'{...register("email", { required: true })} />
 
-                                   <TextField
-                                   sx={{mb:3,width:'75%'}}
-                                   required
-                                   id="filled-required"
-                                   label="phone"
-                                   defaultValue=""
-                                   variant="filled"
-                                   size='small' {...register("phone",)} />
-                                   
                                    
                               </Box>
 

@@ -36,6 +36,18 @@ const VendorsLink = () => {
                          Contact
                     </Button>
                </Link>
+               <Link exact to={`${url}/services`} style={{ textDecoration: 'none' }}>
+                    <Button color="inherit" sx={{ mb: 2,mr:1 }}>
+                         <ContactPhoneIcon sx={{mr:1}}></ContactPhoneIcon>
+                         Services
+                    </Button>
+               </Link>
+               <Link exact to={`${url}/categories`} style={{ textDecoration: 'none' }}>
+                    <Button color="inherit" sx={{ mb: 2,mr:1 }}>
+                         <ContactPhoneIcon sx={{mr:1}}></ContactPhoneIcon>
+                         Category
+                    </Button>
+               </Link>
                
           </List>
           </>

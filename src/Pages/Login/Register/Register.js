@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import { Container, Typography } from '@mui/material';
 import { useHistory } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import CircularProgress from '@mui/material/CircularProgress';
 import Alert from '@mui/material/Alert';
 
 const Register = () => {
@@ -12,6 +13,7 @@ const Register = () => {
      const [error, setError] = useState('');
      const history = useHistory();
      const location = useLocation();
+     const [loading,setLoading] = useState(false)
 
      const handleOnBlur = e => {
           const field = e.target.name;
@@ -24,6 +26,7 @@ const Register = () => {
       
         const handleSubmit = e => {
              console.log(registerData)
+             setLoading(true)
           fetch('https://multivendorapi.herokuapp.com/api/admin/register', {
             method: 'POST',
             headers: {
@@ -39,13 +42,18 @@ const Register = () => {
                     localStorage.setItem('token', value);
                     const destination = location?.state?.from || '/otp';
                     history.replace(destination);
+                    
                } else {
                     setError(info.error);
               }
-             
+              setLoading(false)
             });
             e.preventDefault()
         };
+
+        if(loading){
+          <CircularProgress />
+        }
      return (
           <>
                <Container className="login-style">

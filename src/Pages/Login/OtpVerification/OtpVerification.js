@@ -6,6 +6,7 @@ import { Container, Typography } from '@mui/material';
 import { useHistory } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 const OtpVerification = () => {
@@ -14,6 +15,8 @@ const OtpVerification = () => {
      const [error, setError] = useState('');
      const history = useHistory();
      const location = useLocation();
+     const [loading,setLoading] = useState(false)
+
      const handleOnChangePhone = (e) => {
           const phone = e.target.value
           setPhone(phone)
@@ -26,13 +29,14 @@ const OtpVerification = () => {
         
       
         const handleSubmit = e => {
+          
                const registerData ={
                     phoneNo:Number(phone),
                     otp:String(otp)
                }
                console.log(registerData)
 
-               
+               setLoading(true)   
           fetch('https://multivendorapi.herokuapp.com/api/admin/register/verify', {
             method: 'POST',
             headers: {
@@ -51,10 +55,14 @@ const OtpVerification = () => {
                } else {
                     setError(info.error);
               }
-             
+              setLoading(false)
             });
           e.preventDefault()
         };
+
+        if(loading){
+          <CircularProgress />
+        }
      return (
           <>
               <Container className="login-style">
