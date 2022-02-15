@@ -13,11 +13,13 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import VendorProducts from '../VendorDetails/VendorProducts/VendorProducts';
 import VendorProfile from '../VendorDetails/VendorProfile/VendorProfile';
+import VendorEdit from '../VendorEdit/VendorEdit';
 
 
 function Row(props) {
      const { vendor } = props;
      const [open, setOpen] = React.useState(false);
+     console.log(vendor)
 
      return (
      <React.Fragment>
@@ -40,9 +42,10 @@ function Row(props) {
           <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
                <Collapse in={open} timeout="auto" unmountOnExit>
-               <Box sx={{ margin: 1 }}>
+               <Box sx={{ margin: 4 }}>
                     <VendorProfile></VendorProfile>
-                    <VendorProducts vendor={vendor}></VendorProducts>
+                    <VendorEdit vendor={vendor}></VendorEdit>
+                    <VendorProducts vendor={vendor}></VendorProducts> 
                </Box>
                </Collapse>
           </TableCell>

@@ -23,26 +23,26 @@ const Login = () => {
         };
       
         const handleSubmit = e => {
-          // fetch('', {
-          //   method: 'POST',
-          //   headers: {
-          //     'content-type': 'application/json',
-          //   },
-          //   body: JSON.stringify(loginData),
-          // })
-          //   .then(res => res.json())
-          //   .then(info => {
-          //     let value = info.token;
-          //     console.log(info.error);
-          //      if (value) {
-          //           localStorage.setItem('token', value);
-          //           const destination = location?.state?.from || '/dashboard';
-          //           history.replace(destination);
-          //      } else {
-          //           setError(info.error);
-          //     }
+          fetch('', {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json',
+            },
+            body: JSON.stringify(loginData),
+          })
+            .then(res => res.json())
+            .then(info => {
+              let value = info.token;
+              console.log(info.error);
+               if (value) {
+                    localStorage.setItem('token', value);
+                    const destination = location?.state?.from || '/dashboard';
+                    history.replace(destination);
+               } else {
+                    setError(info.error);
+              }
              
-          //   });
+            });
           const destination = location?.state?.from || '/vendors';
           history.replace(destination);
           e.preventDefault();

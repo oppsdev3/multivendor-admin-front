@@ -7,7 +7,7 @@ const Customers = () => {
      const [loading,setLoading] = useState(false)
      useEffect(()=>{
           setLoading(true)
-          fetch('https://multivendorapi.herokuapp.com/api/products')
+          fetch('https://multivendorapi.herokuapp.com//api/admin/adminroute/allcustomer')
           .then(res => res.json())
           .then(data => {
                console.log(data)
@@ -21,13 +21,7 @@ const Customers = () => {
      }
      return (
           <>   
-          {
-               customers[1] ? 
-               <Customer customers={customers}></Customer>
-               :
-               <h2>No Customer Available</h2>
-          }
-               
+               <Customer customers={customers}></Customer> 
           </>
      );
 };

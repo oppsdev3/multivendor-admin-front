@@ -47,7 +47,7 @@ const OtpVerification = () => {
             .then(res => res.json())
             .then(info => {
               let value = info.token;
-              console.log(info);
+              console.log(info.products);
                if (value) {
                     localStorage.setItem('token', value);
                     const destination = location?.state?.from || '/vendors';

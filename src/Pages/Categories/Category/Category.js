@@ -11,6 +11,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import CategoryDetails from '../CategoryDetails/CategoryDetails/CategoryDetails';
 
 
 function Row(props) {
@@ -39,7 +40,7 @@ function Row(props) {
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
                <Collapse in={open} timeout="auto" unmountOnExit>
                <Box sx={{ margin: 2, display:'flex' }}>
-                    
+                  <CategoryDetails></CategoryDetails>  
                </Box>
                </Collapse>
           </TableCell>

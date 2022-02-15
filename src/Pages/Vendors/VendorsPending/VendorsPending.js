@@ -1,54 +1,116 @@
-import React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import React,{useState} from 'react';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Modal from '@mui/material/Modal';
+import TextField from '@mui/material/TextField';
+import CircularProgress from '@mui/material/CircularProgress';
 
-function createData(name, calories, fat, carbs, protein) {
-     return { name, calories, fat, carbs, protein };
-   }
 
-   const rows = [
-     createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-     createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-     createData('Eclair', 262, 16.0, 24, 6.0),
-     createData('Cupcake', 305, 3.7, 67, 4.3),
-     createData('Gingerbread', 356, 16.0, 49, 3.9),
-   ];
+const style = {
+     position: 'absolute',
+     top: '50%',
+     left: '50%',
+     transform: 'translate(-50%, -50%)',
+     width: 400,
+     bgcolor: 'background.paper',
+     border: '2px solid #000',
+     boxShadow: 24,
+     p: 4,
+   };
 
-const VendorsPending = () => {
+
+const VendorsPending = ({ open, handleClose,vendor }) => {
+    
+     let id = vendor._id
+     console.log(id)
+     const token = localStorage.getItem('token')
+     const [status,setStatus] = useState('')
+     const [role,setRole] = useState('')
+     const [loading,setLoading] = useState(false)
+
+     const handleOnChangeStatus = (e) => {
+          const status = e.target.value
+          setStatus(status)
+        };
+
+     const handleOnChangeRole = (e) =>{
+          const role = e.target.value
+          setRole(role)
+        }
+        
+        const handleSubmit = e => {
+          const updatedData ={
+               role:Number(role),
+               status:String(status)
+          }
+          console.log(updatedData)
+          setLoading(true)   
+          fetch(`https://multivendorapi.herokuapp.com//api/admin/adminroute/allvendor/{id}`, {
+               method: 'PATCH',
+               headers: {
+               'content-type': 'application/json',
+               'Authorization': token
+               },
+               body: JSON.stringify(updatedData),
+
+          })
+               .then(res => res.json())
+               .then(info => {
+                    console.log(info)
+                    setLoading(false)
+            });
+          e.preventDefault()
+        };
+
+        if(loading){
+          <CircularProgress />
+        }
      return (
           <>
-               <TableContainer component={Paper}>
-                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                    <TableHead>
-                         <TableRow>
-                         <TableCell align="center">Dessert (100g serving)</TableCell>
-                         <TableCell align="center">Calories</TableCell>
-                         <TableCell align="center">Fat&nbsp;(g)</TableCell>
-                         <TableCell align="center">Carbs&nbsp;(g)</TableCell>
-                         <TableCell align="center">Protein&nbsp;(g)</TableCell>
-                         </TableRow>
-                    </TableHead>
-                    <TableBody>
-                         {rows.map((row) => (
-                         <TableRow
-                         key={row.name}
-                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+               <Modal
+               open={open}
+               onClose={handleClose}
+               aria-labelledby="modal-modal-title"
+               aria-describedby="modal-modal-description"
+          >
+           <Box sx={style}>
+               <Grid>
+                    <form onSubmit={handleSubmit}>
+                         <TextField
+                              required
+                              size="small"
+                              id="outlined-required"
+                              label="Status"
+                              sx={{ width: '100%'}}
+                              onChange={handleOnChangeStatus}
+                              helperText="Status"
+                              variant="filled"
+                         />
+                         <TextField
+                              required
+                              size="small"
+                              id="outlined-required"
+                              label="Role"
+                              sx={{ width: '100%' }}
+                              onChange={handleOnChangeRole}
+                              otp="otp"
+                              helperText="Role"
+                              variant="filled"
+                         />
+                         <Button
+                              sx={{ width: '50%', m: 2 ,}}
+                              variant="contained"
+                              type="submit"
+                              size="small"
                          >
-                         <TableCell align="center">{row.name}</TableCell>
-                         <TableCell align="center">{row.calories}</TableCell>
-                         <TableCell align="center">{row.fat}</TableCell>
-                         <TableCell align="center">{row.carbs}</TableCell>
-                         <TableCell align="center">{row.protein}</TableCell>
-                         </TableRow>
-                         ))}
-                    </TableBody>
-                    </Table>
-               </TableContainer>   
+                              Submit
+                         </Button>
+                    </form>
+               </Grid>
+          </Box>
+                   
+          </Modal>   
           </>
      );
 };
