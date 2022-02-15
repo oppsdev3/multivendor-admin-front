@@ -14,6 +14,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import VendorProducts from '../VendorDetails/VendorProducts/VendorProducts';
 import VendorProfile from '../VendorDetails/VendorProfile/VendorProfile';
 import VendorEdit from '../VendorEdit/VendorEdit';
+import VendorDelete from '../VendorDelete/VendorDelete';
 
 
 function Row(props) {
@@ -45,6 +46,7 @@ function Row(props) {
                <Box sx={{ margin: 4 }}>
                     <VendorProfile></VendorProfile>
                     <VendorEdit vendor={vendor}></VendorEdit>
+                    <VendorDelete vendor={vendor}></VendorDelete>
                     <VendorProducts vendor={vendor}></VendorProducts> 
                </Box>
                </Collapse>
