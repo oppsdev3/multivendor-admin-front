@@ -13,7 +13,7 @@ const VendorsLink = () => {
      let {  url } = useRouteMatch();
      return (
           <>
-          <List sx={{mt:5}}>
+          <List sx={{mt:1}}>
                <Link exact to="/vendors" style={{ textDecoration: 'none' }}>
                     <Button color="inherit" sx={{ mb: 2, mr:2 }}>
                          <VerifiedUserIcon sx={{mr:1}}></VerifiedUserIcon>

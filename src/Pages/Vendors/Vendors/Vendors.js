@@ -11,6 +11,7 @@ import Button from '@mui/material/Button';
 import  Typography  from '@mui/material/Typography';
 import VendorsLink from '../VendorsLink/VendorsLink';
 import VendorsRoute from '../VendorsRoute/VendorsRoute';
+import logo from '../../../image/logo.png'
 
 
 const drawerWidth = 200;
@@ -26,7 +27,9 @@ const Vendors = (props) => {
    
      const drawer = (
           <div>
-         
+            <div>
+              <img src={logo} alt="" />
+            </div>
           <Toolbar />
    
           <VendorsLink></VendorsLink>
@@ -67,46 +70,46 @@ const Vendors = (props) => {
      return (
           <>
                 <Box sx={{ display: 'flex' }}>
-        <CssBaseline />
-        <AppBar
-          position="fixed"
-          sx={{
-            width: { sm: `calc(100% - ${drawerWidth}px)` },
-            ml: { sm: `${drawerWidth}px` },
-          }}
-        >
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'flex-end',
-              m: 1,
-            }}
-          >
-            <Toolbar>
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                edge="start"
-                onClick={handleDrawerToggle}
-                sx={{ mr: 2, display: { sm: 'none' } }}
+            <CssBaseline />
+            <AppBar
+              position="fixed"
+              sx={{
+                width: { sm: `calc(100% - ${drawerWidth}px)` },
+                ml: { sm: `${drawerWidth}px` },
+              }}
+            >
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'flex-end',
+                  m: 1,
+                }}
               >
-                <MenuIcon />
-              </IconButton>
-              <Item>
-                    <Typography variant="h5" noWrap component="div">
-                    Welcome 
-                    </Typography>
-              </Item>
-              <Item>
-                <Button sx={{ ml: 1, color: 'white' }}>
-                  
-                </Button>
-              </Item>
-              <Item>
-                
-              </Item>
-            </Toolbar>
-          </Box>
+                <Toolbar>
+                  <IconButton
+                    color="inherit"
+                    aria-label="open drawer"
+                    edge="start"
+                    onClick={handleDrawerToggle}
+                    sx={{ mr: 2, display: { sm: 'none' } }}
+                  >
+                    <MenuIcon />
+                  </IconButton>
+                  <Item>
+                        <Typography variant="h5" noWrap component="div">
+                        Welcome 
+                        </Typography>
+                  </Item>
+                  <Item>
+                    <Button sx={{ ml: 1, color: 'white' }}>
+                      
+                    </Button>
+                  </Item>
+                  <Item>
+                    
+                  </Item>
+                </Toolbar>
+              </Box>
         </AppBar>
         <Box
           component="nav"
