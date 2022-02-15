@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const style = {
   position: 'absolute',
@@ -17,122 +18,96 @@ const style = {
   p: 4,
 };
 
-const CustomerModal = ({ open, handleClose }) => {
-     const [phone,setPhone] = useState('')
-     const [email,setEmail] = useState('')
-     const [address,setAddress] = useState('')
-     const [image,setImage] = useState('')
+const CustomerModal = ({ open, handleClose,vendor: customer }) => {
+     let id = customer._id
+     console.log(id)
+     const token = localStorage.getItem('token')
+     const [status,setStatus] = useState('')
+     const [role,setRole] = useState('')
+     const [loading,setLoading] = useState(false)
 
-     const handleOnChangePhone = (e) => {
-          const phone = e.target.value
-          setPhone(phone)
+     const handleOnChangeStatus = (e) => {
+          const status = e.target.value
+          setStatus(status)
         };
 
-     const handleOnChangeEmail = (e) =>{
-          const email = e.target.value
-          setEmail(email)
+     const handleOnChangeRole = (e) =>{
+          const role = e.target.value
+          setRole(role)
         }
-     const handleOnChangeAddress = (e) =>{
-          const address = e.target.value
-          setAddress(address)
-        }
-     const handleOnChangeImage = (e) =>{
-          const img = e.target.value
-          setImage(img)
-        }
-
-     const handleUpdate = id => {
-          const customerData ={
-               phoneNo:Number(phone),
-               email:String(email),
-               address:address,
-               profileImg:image
+        
+        const handleSubmit = e => {
+          const updatedData ={
+               role:Number(role),
+               status:String(status)
           }
-          console.log(customerData)
-
-          fetch(`https://multivendorapi.herokuapp.com/api/user/updateuser`, {
+          console.log(updatedData)
+          setLoading(true)   
+          fetch(`https://multivendorapi.herokuapp.com//api/admin/adminroute/allcustomer/{id}`, {
                method: 'PATCH',
                headers: {
                'content-type': 'application/json',
+               'Authorization': token
                },
-               body: JSON.stringify(customerData),
-              
+               body: JSON.stringify(updatedData),
+
           })
                .then(res => res.json())
                .then(info => {
-               console.log(info);
-               });
-          };
+                    console.log(info)
+                    setLoading(false)
+            });
+          e.preventDefault()
+        };
 
+        if(loading){
+          <CircularProgress />
+        }
      return (
           <>
-               <Modal
+                <Modal
                open={open}
                onClose={handleClose}
                aria-labelledby="modal-modal-title"
                aria-describedby="modal-modal-description"
-               >
-               <Box sx={style}>
-                    <Grid>
-                    <Box>
-                    <form onSubmit={handleUpdate}>
+          >
+           <Box sx={style}>
+               <Grid>
+                    <form onSubmit={handleSubmit}>
                          <TextField
-                         sx={{ width: '100%', m: 1 }}
-                         id="outlined-size-small"
-                         label="Phone"
-                         name="phone"
-                         defaultValue=""
-                         size="small"
-                         helperText="phone"
-                         onChange={handleOnChangePhone}
+                              required
+                              size="small"
+                              id="outlined-required"
+                              label="Status"
+                              sx={{ width: '100%'}}
+                              onChange={handleOnChangeStatus}
+                              helperText="Status"
+                              variant="filled"
                          />
                          <TextField
-                         sx={{ width: '100%', m: 1 }}
-                         id="outlined-size-small"
-                         label="Email"
-                         name="email"
-                         defaultValue=""
-                         size="small"
-                         helperText="Email"
-                         onChange={handleOnChangeEmail}
+                              required
+                              size="small"
+                              id="outlined-required"
+                              label="Role"
+                              sx={{ width: '100%' }}
+                              onChange={handleOnChangeRole}
+                              otp="otp"
+                              helperText="Role"
+                              variant="filled"
                          />
-                         <TextField
-                         sx={{ width: '100%', m: 1 }}
-                         id="outlined-size-small"
-                         label="Address"
-                         name="address"
-                         defaultValue=""
-                         size="small"
-                         helperText="Address"
-                         onChange={handleOnChangeAddress}
-                         />
-                         <TextField
-                         sx={{ width: '100%', m: 1 }}
-                         id="outlined-size-small"
-                         label="Image Link"
-                         name="image"
-                         defaultValue=""
-                         size="small"
-                         helperText="Image Link"
-                         onChange={handleOnChangeImage}
-                         />
-                         
-                         <div>
-                              <Button
-                                   sx={{ width: '25%', mt: 2 }}
-                                   type="submit"
-                                   variant="contained"
-                                   size="small"
-                                   
-                              >
-                                   Update
-                              </Button>
-                         </div>
+                         <Button
+                              sx={{ width: '50%', m: 2 ,}}
+                              variant="contained"
+                              type="submit"
+                              size="small"
+                         >
+                              Submit
+                         </Button>
                     </form>
-                    </Box>
-                    </Grid>
-               </Box>
-               </Modal>  
+               </Grid>
+          </Box>
+                   
+          </Modal>   
                
           </>
      );
