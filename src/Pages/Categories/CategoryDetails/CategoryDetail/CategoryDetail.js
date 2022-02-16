@@ -28,6 +28,7 @@ const CategoryDetail = ({categories}) => {
                     lg={4}
                     >
                     <Paper sx={{ py: 2, textAlign: 'center' }} elevation={3}>
+                    <img src="" alt="" />
                          <Typography
                               sx={{ color: 'info.main' }}
                               variant="body1"

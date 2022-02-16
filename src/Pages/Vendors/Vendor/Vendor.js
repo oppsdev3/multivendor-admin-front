@@ -25,9 +25,9 @@ const Vendor = () => {
                               Pending Vendors
                          </Button>
                     </Link> */}
-                    <Box >
+                    {/* <Box >
                          <VendorManage></VendorManage>
-                    </Box>
+                    </Box> */}
                </div>
                <Box sx={{mt:4}}>
                     <VendorAll></VendorAll>

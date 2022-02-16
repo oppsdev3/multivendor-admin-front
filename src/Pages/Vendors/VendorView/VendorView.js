@@ -45,9 +45,10 @@ function Row(props) {
                <Collapse in={open} timeout="auto" unmountOnExit>
                <Box sx={{ margin: 4 }}>
                     <VendorProfile></VendorProfile>
-                    <VendorEdit vendor={vendor}></VendorEdit>
-                    <VendorDelete vendor={vendor}></VendorDelete>
+                    {/* <VendorEdit vendor={vendor}></VendorEdit>
+                    <VendorDelete vendor={vendor}></VendorDelete> */}
                     <VendorProducts vendor={vendor}></VendorProducts> 
+                    
                </Box>
                </Collapse>
           </TableCell>

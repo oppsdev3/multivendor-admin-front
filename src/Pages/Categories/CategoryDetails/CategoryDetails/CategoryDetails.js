@@ -32,7 +32,7 @@ const CategoryDetails = ({category}) => {
      }
      return (
           <>
-               <Grid container spacing={2}>
+               <Grid sx={{mt:4}} container spacing={2}>
                     <CategoryDetail categories={categories}></CategoryDetail> 
                </Grid>  
               
