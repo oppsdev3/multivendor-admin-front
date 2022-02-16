@@ -11,7 +11,7 @@ const Vendor = () => {
      return (
           <div>
                <div className='vendor-container'>
-                    <Button
+                    {/* <Button
                          color="inherit"
                          sx={{  color: '#059862', fontWeight: '600' }}
                          >     
@@ -24,7 +24,7 @@ const Vendor = () => {
                          >     
                               Pending Vendors
                          </Button>
-                    </Link>
+                    </Link> */}
                     <Box >
                          <VendorManage></VendorManage>
                     </Box>

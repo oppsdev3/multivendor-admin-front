@@ -20,30 +20,15 @@ const style = {
    };
 
 
-const VendorsPending = ({ open, handleClose,vendor }) => {
-    
+const VendorRole = ({ open, handleClose,vendor }) => {
      let id = vendor._id
-     
      console.log(id)
-     const token = localStorage.getItem('token')
-     const [status,setStatus] = useState('')
-     const [role,setRole] = useState('')
+     
      const [loading,setLoading] = useState(false)
-
-     const handleOnChangeStatus = (e) => {
-          const status = e.target.value
-          setStatus(status)
-        };
-
-        const handleOnChangeRole = (e) =>{
-          const role = e.target.value
-          setRole(role)
-        }
-        
+     const token = localStorage.getItem('token')
+    
         const handleSubmit = e => {
           const updatedData ={
-               status:String(status),
-               role:Number(role),
               
           }
           console.log(updatedData)
@@ -70,7 +55,7 @@ const VendorsPending = ({ open, handleClose,vendor }) => {
         }
      return (
           <>
-               <Modal
+              <Modal
                open={open}
                onClose={handleClose}
                aria-labelledby="modal-modal-title"
@@ -79,27 +64,7 @@ const VendorsPending = ({ open, handleClose,vendor }) => {
            <Box sx={style}>
                <Grid>
                     <form onSubmit={handleSubmit}>
-                         <TextField
-                              required
-                              size="small"
-                              id="outlined-required"
-                              label="Status"
-                              sx={{ width: '100%'}}
-                              onChange={handleOnChangeStatus}
-                              helperText="Status"
-                              variant="filled"
-                         />
-                          <TextField
-                              required
-                              size="small"
-                              id="outlined-required"
-                              label="Role"
-                              sx={{ width: '100%' }}
-                              onChange={handleOnChangeRole}
-                              otp="otp"
-                              helperText="Role"
-                              variant="filled"
-                         />
+                        
                          <Button
                               sx={{ width: '50%', m: 2 ,}}
                               variant="contained"
@@ -112,9 +77,9 @@ const VendorsPending = ({ open, handleClose,vendor }) => {
                </Grid>
           </Box>
                    
-          </Modal>   
+          </Modal>    
           </>
      );
 };
 
-export default VendorsPending;
+export default VendorRole;

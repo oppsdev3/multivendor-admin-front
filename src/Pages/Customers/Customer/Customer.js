@@ -33,20 +33,20 @@ function Row(props) {
                {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                </IconButton>
           </TableCell>
-          <TableCell align="center">{customer.title}</TableCell>
-          <TableCell align="center">{customer.price}</TableCell>
-          <TableCell align="center">{customer.sold}</TableCell>
-          <TableCell align="center">{customer.description}</TableCell>
-          <TableCell align="center">{customer.views}</TableCell>
+          <TableCell align="center">{customer.phoneNo}</TableCell>
+          <TableCell align="center">{customer.role}</TableCell>
+          <TableCell align="center">{customer.status}</TableCell>
+          <TableCell align="center">{customer._id}</TableCell>
           </TableRow>
           <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
                <Collapse in={open} timeout="auto" unmountOnExit>
                <Box sx={{ margin: 2, display:'flex' }}>
                     <CustomerUpdate customer={customer}></CustomerUpdate>
-                    <CustomerDelete></CustomerDelete>
-                    <CustomerDetails customer={customer}></CustomerDetails>
+                    <CustomerDelete customer={customer}></CustomerDelete>
+                    
                </Box>
+               <CustomerDetails customer={customer}></CustomerDetails>
                </Collapse>
           </TableCell>
           </TableRow>
@@ -63,11 +63,10 @@ const Customer = ({customers}) => {
                     <TableHead>
                          <TableRow>
                          <TableCell />
-                         <TableCell align="center">Title</TableCell>
-                         <TableCell align="center">Price</TableCell>
-                         <TableCell align="center">Sold</TableCell>
-                         <TableCell align="center">Description</TableCell>
-                         <TableCell align="center">Views</TableCell>
+                         <TableCell align="center">Phone</TableCell>
+                         <TableCell align="center">Role</TableCell>
+                         <TableCell align="center">Status</TableCell>
+                         <TableCell align="center">ID</TableCell>
                          </TableRow>
                     </TableHead>
                     <TableBody>

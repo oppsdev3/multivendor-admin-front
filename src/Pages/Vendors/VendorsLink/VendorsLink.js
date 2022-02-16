@@ -32,12 +32,12 @@ const VendorsLink = () => {
                          Customer
                     </Button>
                </Link>
-               <Link exact to={`${url}/contacts`} style={{ textDecoration: 'none' }}>
+               {/* <Link exact to={`${url}/contacts`} style={{ textDecoration: 'none' }}>
                     <Button color="inherit" sx={{ mb: 2,mr:1 }}>
                          <ContactPhoneIcon sx={{mr:1}}></ContactPhoneIcon>
                          Contact
                     </Button>
-               </Link>
+               </Link> */}
                <Link exact to={`${url}/services`} style={{ textDecoration: 'none' }}>
                     <Button color="inherit" sx={{ mb: 2,mr:1 }}>
                          <MiscellaneousServicesIcon sx={{mr:1}}></MiscellaneousServicesIcon>

@@ -43,7 +43,7 @@ function Row(props) {
                <Collapse in={open} timeout="auto" unmountOnExit>
                <Box sx={{ margin: 2, display:'flex' }}>
                     <ProductEdit></ProductEdit>
-                    <ProductDelete></ProductDelete>
+                    <ProductDelete product={product}></ProductDelete>
                     <ProductDetails product={product}></ProductDetails>
                </Box>
                </Collapse>

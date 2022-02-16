@@ -30,17 +30,15 @@ function Row(props) {
                {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                </IconButton>
           </TableCell>
-          <TableCell align="center">{category.title}</TableCell>
-          <TableCell align="center">{category.content}</TableCell>
-          <TableCell align="center">{category.price}</TableCell>
-          <TableCell align="center">{category.sold}</TableCell>
-          <TableCell align="center">{category.views}</TableCell>
+          <TableCell align="center">{category.name}</TableCell>
+          <TableCell align="center">{category._id}</TableCell>
+         
           </TableRow>
           <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
                <Collapse in={open} timeout="auto" unmountOnExit>
                <Box sx={{ margin: 2, display:'flex' }}>
-                  <CategoryDetails></CategoryDetails>  
+                  <CategoryDetails category={category}></CategoryDetails>  
                </Box>
                </Collapse>
           </TableCell>
@@ -58,11 +56,9 @@ const Category = ({categories}) => {
                     <TableHead>
                          <TableRow>
                          <TableCell />
-                         <TableCell align="center">Title</TableCell>
-                         <TableCell align="center">Type</TableCell>
-                         <TableCell align="center">Price</TableCell>
-                         <TableCell align="center">Sold</TableCell>
-                         <TableCell align="center">Views</TableCell>
+                         <TableCell align="center">Name</TableCell>
+                         <TableCell align="center">ID</TableCell>
+                         
                          </TableRow>
                     </TableHead>
                     <TableBody>

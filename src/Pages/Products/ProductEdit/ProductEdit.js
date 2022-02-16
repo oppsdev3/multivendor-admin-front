@@ -7,23 +7,23 @@ const ProductEdit = () => {
      const handleOpen = () => setOpen(true);
      const handleClose = () => setOpen(false);
 
-     // const handleUpdate = id => {
-     // fetch(``, {
-     //      method: 'PUT',
-     //      headers: {
-     //      'content-type': 'application/json',
-     //      },
-     //      body: JSON.stringify(),
+     const handleUpdate = id => {
+     fetch(``, {
+          method: 'PATCH',
+          headers: {
+          'content-type': 'application/json',
+          },
+          body: JSON.stringify(),
          
-     // })
-     //      .then(res => res.json())
-     //      .then(info => {
-     //      console.log(info);
-     //      });
-     // };
+     })
+          .then(res => res.json())
+          .then(info => {
+          console.log(info);
+          });
+     };
      return (
           <div>
-               <Button
+               {/* <Button
                     onClick={handleOpen}
                     variant="contained"
                     sx={{mx:2}}
@@ -31,7 +31,7 @@ const ProductEdit = () => {
                     size='small'
                     >
                     Edit
-               </Button>
+               </Button> */}
                <ProductModal open={open} handleClose={handleClose}></ProductModal>
           </div>
      );

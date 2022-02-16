@@ -5,9 +5,18 @@ import Customer from '../Customer/Customer';
 const Customers = () => {
      const [customers,setCustomers] = useState([])
      const [loading,setLoading] = useState(false)
+     const token = localStorage.getItem('token')
      useEffect(()=>{
           setLoading(true)
-          fetch('https://multivendorapi.herokuapp.com//api/admin/adminroute/allcustomer')
+          fetch('https://multivendorapi.herokuapp.com/api/admin/adminroute/allcustomer', {
+               method: 'GET',
+               headers: {
+               'content-type': 'application/json',
+               'Authorization': token
+               },
+               body: JSON.stringify(),
+
+          })
           .then(res => res.json())
           .then(data => {
                console.log(data)

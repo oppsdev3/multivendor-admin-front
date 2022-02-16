@@ -6,7 +6,7 @@ const VendorDelete = ({vendor}) => {
      const token = localStorage.getItem('token')
      const handleDelete = (e) =>{
           console.log(id)
-          fetch(`https://multivendorapi.herokuapp.com//api/admin/adminroute/allvendor/${id}`, {
+          fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/allvendor/${id}`, {
                method: 'PATCH',
                headers: {
                'content-type': 'application/json',

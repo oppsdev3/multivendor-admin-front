@@ -24,7 +24,6 @@ const CustomerModal = ({ open, handleClose, customer }) => {
      const token = localStorage.getItem('token')
      const [status,setStatus] = useState('')
      const [role,setRole] = useState('')
-     const [loading,setLoading] = useState(false)
 
      const handleOnChangeStatus = (e) => {
           const status = e.target.value
@@ -42,8 +41,8 @@ const CustomerModal = ({ open, handleClose, customer }) => {
                status:String(status)
           }
           console.log(updatedData)
-          setLoading(true)   
-          fetch(`https://multivendorapi.herokuapp.com//api/admin/adminroute/allcustomer/{id}`, {
+          
+          fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/allcustomer/{id}`, {
                method: 'PATCH',
                headers: {
                'content-type': 'application/json',
@@ -55,14 +54,11 @@ const CustomerModal = ({ open, handleClose, customer }) => {
                .then(res => res.json())
                .then(info => {
                     console.log(info)
-                    setLoading(false)
+                   
             });
           e.preventDefault()
         };
 
-        if(loading){
-          return <CircularProgress />
-        }
      return (
           <>
                <Modal

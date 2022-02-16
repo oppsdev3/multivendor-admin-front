@@ -3,7 +3,7 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
-const CustomerDetail = () => {
+const CustomerDetail = ({customers}) => {
      return (
           <>
                <Grid
@@ -16,14 +16,15 @@ const CustomerDetail = () => {
                     md={4}
                     lg={4}
                     >
-                    <Paper sx={{ py: 2, textAlign: 'center' }} elevation={3}>
+                    <Paper sx={{ py: 2, textAlign: 'center',  }} elevation={3}>
+                         {/* <img src={customers} alt="" /> */}
                          <Typography
                               sx={{ color: 'info.main' }}
                               variant="body1"
                               gutterBottom
                               component="div"
                          >
-                              {}
+                              Role: {customers.role}
                          </Typography>
                          
                          <Typography
@@ -32,7 +33,7 @@ const CustomerDetail = () => {
                               gutterBottom
                               component="div"
                          >
-                              {}
+                             Phone: {customers.phoneNo}
                          </Typography>
                     </Paper>
                </Grid>     
