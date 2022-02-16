@@ -35,7 +35,6 @@ const OtpVerification = () => {
                     otp:String(otp)
                }
                console.log(registerData)
-
                setLoading(true)   
           fetch('https://multivendorapi.herokuapp.com/api/admin/register/verify', {
             method: 'POST',
@@ -52,16 +51,17 @@ const OtpVerification = () => {
                     localStorage.setItem('token', value);
                     const destination = location?.state?.from || '/vendors';
                     history.replace(destination);
+                    setLoading(false)
                } else {
                     setError(info.error);
               }
-              setLoading(false)
+              
             });
           e.preventDefault()
         };
 
         if(loading){
-          <CircularProgress />
+          return <CircularProgress />
         }
      return (
           <>

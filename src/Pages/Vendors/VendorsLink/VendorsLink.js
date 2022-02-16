@@ -32,7 +32,7 @@ const VendorsLink = () => {
                          Customer
                     </Button>
                </Link>
-               <Link exact to={`${url}/contact`} style={{ textDecoration: 'none' }}>
+               <Link exact to={`${url}/contacts`} style={{ textDecoration: 'none' }}>
                     <Button color="inherit" sx={{ mb: 2,mr:1 }}>
                          <ContactPhoneIcon sx={{mr:1}}></ContactPhoneIcon>
                          Contact

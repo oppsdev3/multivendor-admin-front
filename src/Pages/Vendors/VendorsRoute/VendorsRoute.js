@@ -5,9 +5,10 @@ import Vendor from './../Vendor/Vendor';
 import  Typography  from '@mui/material/Typography';
 import Products from '../../Products/Products/Products';
 import Customers from '../../Customers/Customers/Customers';
-import Contacts from './../../Contacts/Contacts/Contacts';
+
 import Services from '../../Services/Services/Services';
 import Categories from '../../Categories/Categories/Categories';
+import Contacts from './../../Contacts/Contacts/Contacts';
 
 
 
@@ -18,7 +19,6 @@ const VendorsRoute = () => {
           <>
              <Typography paragraph>
                <Grid container spacing={2}>
-               {/* nested route */}
                     <Grid item xs={12} md={12}>
                          <Switch>
                               <Route exact path="/vendors">
@@ -30,9 +30,9 @@ const VendorsRoute = () => {
                               <Route exact path={`${path}/customer`}>
                                    <Customers></Customers>
                               </Route>
-                              <Route exact path={`${path}/contact`}>
+                              {/* <Route exact path={`${path}/contacts`}>
                                    <Contacts></Contacts>
-                              </Route>
+                              </Route> */}
                               <Route exact path={`${path}/services`}>
                                    <Services></Services>
                               </Route>

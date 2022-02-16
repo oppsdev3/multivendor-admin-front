@@ -18,8 +18,8 @@ const style = {
   p: 4,
 };
 
-const CustomerModal = ({ open, handleClose, customer }) => {
-     let id = customer._id
+const ContactModal = ({ open, handleClose, contact }) => {
+     let id = contact._id
      console.log(id)
      const token = localStorage.getItem('token')
      const [status,setStatus] = useState('')
@@ -43,7 +43,7 @@ const CustomerModal = ({ open, handleClose, customer }) => {
           }
           console.log(updatedData)
           setLoading(true)   
-          fetch(`https://multivendorapi.herokuapp.com//api/admin/adminroute/allcustomer/{id}`, {
+          fetch(`https://multivendorapi.herokuapp.com//api/admin/adminroute/allvendorcontact/{id}`, {
                method: 'PATCH',
                headers: {
                'content-type': 'application/json',
@@ -71,46 +71,45 @@ const CustomerModal = ({ open, handleClose, customer }) => {
                aria-labelledby="modal-modal-title"
                aria-describedby="modal-modal-description"
           >
-           <Box sx={style}>
-               <Grid>
-                    <form onSubmit={handleSubmit}>
-                         <TextField
-                              required
-                              size="small"
-                              id="outlined-required"
-                              label="Status"
-                              sx={{ width: '100%'}}
-                              onChange={handleOnChangeStatus}
-                              helperText="Status"
-                              variant="filled"
-                         />
-                         <TextField
-                              required
-                              size="small"
-                              id="outlined-required"
-                              label="Role"
-                              sx={{ width: '100%' }}
-                              onChange={handleOnChangeRole}
-                              otp="otp"
-                              helperText="Role"
-                              variant="filled"
-                         />
-                         <Button
-                              sx={{ width: '50%', m: 2 ,}}
-                              variant="contained"
-                              type="submit"
-                              size="small"
-                         >
-                              Submit
-                         </Button>
-                    </form>
-               </Grid>
-          </Box>
+               <Box sx={style}>
+                    <Grid>
+                         <form onSubmit={handleSubmit}>
+                              <TextField
+                                   required
+                                   size="small"
+                                   id="outlined-required"
+                                   label="Status"
+                                   sx={{ width: '100%'}}
+                                   onChange={handleOnChangeStatus}
+                                   helperText="Status"
+                                   variant="filled"
+                              />
+                              <TextField
+                                   required
+                                   size="small"
+                                   id="outlined-required"
+                                   label="Role"
+                                   sx={{ width: '100%' }}
+                                   onChange={handleOnChangeRole}
+                                   otp="otp"
+                                   helperText="Role"
+                                   variant="filled"
+                              />
+                              <Button
+                                   sx={{ width: '50%', m: 2 ,}}
+                                   variant="contained"
+                                   type="submit"
+                                   size="small"
+                              >
+                                   Submit
+                              </Button>
+                         </form>
+                    </Grid>
+               </Box>
                    
-          </Modal>   
-               
+          </Modal>    
           </>
      );
 };
 
-export default CustomerModal;
+export default ContactModal;

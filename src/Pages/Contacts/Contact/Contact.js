@@ -11,11 +11,13 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import ContactDetails from '../ContactDetails/ContactDetails/ContactDetails';
+import ContactUpdate from '../ContactUpdate/ContactUpdate/ContactUpdate';
 
 
 
 function Row(props) {
-     const { product } = props;
+     const { contact } = props;
      const [open, setOpen] = React.useState(false);
 
      return (
@@ -30,25 +32,26 @@ function Row(props) {
                {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                </IconButton>
           </TableCell>
-          <TableCell align="center">{product.title}</TableCell>
-          <TableCell align="center">{product.price}</TableCell>
-          <TableCell align="center">{product.sold}</TableCell>
-          <TableCell align="center">{product.description}</TableCell>
-          <TableCell align="center">{product.views}</TableCell>
+          <TableCell align="center">{contact.title}</TableCell>
+          <TableCell align="center">{contact.price}</TableCell>
+          <TableCell align="center">{contact.sold}</TableCell>
+          <TableCell align="center">{contact.description}</TableCell>
+          <TableCell align="center">{contact.views}</TableCell>
           </TableRow>
           <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
                <Collapse in={open} timeout="auto" unmountOnExit>
-               <Box sx={{ margin: 2, display:'flex' }}>
-                    
-               </Box>
+                    <Box sx={{ margin: 2, display:'flex' }}>
+                         <ContactUpdate contact={contact}></ContactUpdate>
+                         <ContactDetails contact={contact}></ContactDetails>
+                    </Box>
                </Collapse>
           </TableCell>
           </TableRow>
      </React.Fragment>
      );
      }
-const Contact = () => {
+const Contact = ({conatct}) => {
      return (
           <>
               <TableContainer component={Paper}>
@@ -64,9 +67,9 @@ const Contact = () => {
                          </TableRow>
                     </TableHead>
                     <TableBody>
-                         {/* {products.map((product) => (
-                              <Row key={product._id} product={product} />
-                              ))} */}
+                         {conatct.map((conatct) => (
+                              <Row key={conatct._id} conatct={conatct} />
+                              ))}
                     </TableBody>
                     </Table>
                </TableContainer> 

@@ -13,6 +13,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import CustomerUpdate from '../CustomerUpdate/CustomerUpdate';
 import CustomerDelete from './../CustomerDelete/CustomerDelete';
+import CustomerDetails from '../CustomerDetails/CustomerDetails/CustomerDetails';
 
 
 
@@ -44,6 +45,7 @@ function Row(props) {
                <Box sx={{ margin: 2, display:'flex' }}>
                     <CustomerUpdate customer={customer}></CustomerUpdate>
                     <CustomerDelete></CustomerDelete>
+                    <CustomerDetails customer={customer}></CustomerDetails>
                </Box>
                </Collapse>
           </TableCell>

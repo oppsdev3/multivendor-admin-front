@@ -25,14 +25,13 @@ const Register = () => {
         };
       
         const handleSubmit = e => {
-             console.log(registerData)
-             setLoading(true)
+          setLoading(true)
           fetch('https://multivendorapi.herokuapp.com/api/admin/register', {
-            method: 'POST',
-            headers: {
-              'content-type': 'application/json',
-            },
-            body: JSON.stringify(registerData),
+               method: 'POST',
+               headers: {
+               'content-type': 'application/json',
+               },
+               body: JSON.stringify(registerData),
           })
             .then(res => res.json())
             .then(info => {
@@ -42,17 +41,17 @@ const Register = () => {
                     localStorage.setItem('token', value);
                     const destination = location?.state?.from || '/otp';
                     history.replace(destination);
+                    setLoading(false)
                     
                } else {
                     setError(info.error);
               }
-              setLoading(false)
             });
             e.preventDefault()
         };
 
         if(loading){
-          <CircularProgress />
+          return <CircularProgress />
         }
      return (
           <>

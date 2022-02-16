@@ -13,6 +13,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import ProductEdit from '../ProductEdit/ProductEdit';
 import ProductDelete from '../ProductDelete/ProductDelete';
+import ProductDetails from '../ProductDetails/ProductDetails/ProductDetails';
 
 
 function Row(props) {
@@ -43,6 +44,7 @@ function Row(props) {
                <Box sx={{ margin: 2, display:'flex' }}>
                     <ProductEdit></ProductEdit>
                     <ProductDelete></ProductDelete>
+                    <ProductDetails product={product}></ProductDetails>
                </Box>
                </Collapse>
           </TableCell>
