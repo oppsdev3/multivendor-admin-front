@@ -6,20 +6,34 @@ const CustomerUpdate = ({customer}) => {
      const [open, setOpen] = React.useState(false);
      const handleOpen = () => setOpen(true);
      const handleClose = () => setOpen(false);
-
+     console.log(customer.active)
      
      return (
           <div>
-               <Button
-                    onClick={handleOpen}
-                    variant="contained"
-                    sx={{mx:2}}
-                    color="success"
-                    size='small'
+               {
+                    customer.status === "active" ? 
+                    <Button
+                         onClick={handleOpen}
+                         variant="contained"
+                         sx={{mx:2}}
+                         color="success"
+                         size='small'
                     >
-                    Edit
-               </Button>
-               <CustomerModal customer={customer} open={open} handleClose={handleClose}></CustomerModal>
+                    Inactive
+                    </Button>
+                    :
+                    <Button
+                         onClick={handleOpen}
+                         variant="contained"
+                         sx={{mx:2}}
+                         color="success"
+                         size='small'
+                    >
+                    Active
+                    </Button>
+
+               }
+               {/* <CustomerModal customer={customer} open={open} handleClose={handleClose}></CustomerModal> */}
           </div>
      );
 };

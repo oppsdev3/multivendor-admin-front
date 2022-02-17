@@ -18,22 +18,15 @@ const CustomerDetail = ({customers}) => {
                     >
                     <Paper sx={{ py: 2, textAlign: 'center',  }} elevation={3}>
                          {/* <img src={customers} alt="" /> */}
-                         <Typography
-                              sx={{ color: 'info.main' }}
-                              variant="body1"
-                              gutterBottom
-                              component="div"
-                         >
-                              Role: {customers.role}
-                         </Typography>
+                         
                          
                          <Typography
-                              sx={{ color: 'red' }}
-                              variant="body1"
+                              sx={{ color: '#04AA6D',fontWeight:700 }}
+                              variant="h6"
                               gutterBottom
                               component="div"
                          >
-                             Phone: {customers.phoneNo}
+                             PHONE - {customers.phoneNo}
                          </Typography>
                     </Paper>
                </Grid>     

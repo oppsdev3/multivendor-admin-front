@@ -9,6 +9,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import Typography from '@mui/material/Typography';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import CustomerUpdate from '../CustomerUpdate/CustomerUpdate';
@@ -33,9 +34,39 @@ function Row(props) {
                {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                </IconButton>
           </TableCell>
-          <TableCell align="center">{customer.phoneNo}</TableCell>
-          <TableCell align="center">{customer.role}</TableCell>
-          <TableCell align="center">{customer.status}</TableCell>
+          <TableCell align="center">
+               <Typography
+                    sx={{ color: 'info.main', fontWeight:900 }}
+                    variant="body1"
+                    gutterBottom
+                    component="div"
+               >
+                    {customer.phoneNo}
+               </Typography>
+          </TableCell>
+          <TableCell align="center">
+               {
+                    customer.status == "active" ? 
+                    <Typography
+                         sx={{ color: 'info.main', fontWeight:900 }}
+                         variant="body1"
+                         gutterBottom
+                         component="div"
+                    >
+                    {customer.status}
+                    </Typography>
+                    :
+                    <Typography
+                         sx={{ color: 'red', fontWeight:900 }}
+                         variant="body1"
+                         gutterBottom
+                         component="div"
+                    >
+                    {customer.status}
+                    </Typography>
+               }
+               
+          </TableCell>
           <TableCell align="center">{customer._id}</TableCell>
           </TableRow>
           <TableRow>
@@ -43,7 +74,7 @@ function Row(props) {
                <Collapse in={open} timeout="auto" unmountOnExit>
                <Box sx={{ margin: 2, display:'flex' }}>
                     <CustomerUpdate customer={customer}></CustomerUpdate>
-                    <CustomerDelete customer={customer}></CustomerDelete>
+                    {/* <CustomerDelete customer={customer}></CustomerDelete> */}
                     
                </Box>
                <CustomerDetails customer={customer}></CustomerDetails>
@@ -58,15 +89,42 @@ const Customer = ({customers}) => {
      console.log(customers)
      return (
           <>
-               <TableContainer component={Paper}>
+               <TableContainer sx={{mt:2}} component={Paper}>
                     <Table aria-label="collapsible table">
                     <TableHead>
                          <TableRow>
                          <TableCell />
-                         <TableCell align="center">Phone</TableCell>
-                         <TableCell align="center">Role</TableCell>
-                         <TableCell align="center">Status</TableCell>
-                         <TableCell align="center">ID</TableCell>
+                         <TableCell align="center">
+                              <Typography
+                                   sx={{ color: '#04AA6D', fontWeight:900 }}
+                                   variant="h5"
+                                   gutterBottom
+                                   component="div"
+                              >
+                              Customer Phone
+                              </Typography>
+                         </TableCell>
+                         <TableCell align="center">
+                              <Typography
+                                   sx={{ color: '#04AA6D', fontWeight:900 }}
+                                   variant="h5"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   Customer Status
+                              </Typography>
+                              </TableCell>
+                         <TableCell align="center">
+                              <Typography
+                                   sx={{ color: '#04AA6D', fontWeight:900 }}
+                                   variant="h5"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   Customer ID
+                              </Typography>
+                              
+                         </TableCell>
                          </TableRow>
                     </TableHead>
                     <TableBody>

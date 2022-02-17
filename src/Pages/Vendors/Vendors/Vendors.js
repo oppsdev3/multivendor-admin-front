@@ -12,6 +12,8 @@ import  Typography  from '@mui/material/Typography';
 import VendorsLink from '../VendorsLink/VendorsLink';
 import VendorsRoute from '../VendorsRoute/VendorsRoute';
 import logo from '../../../image/logo.png'
+import Logout from '../../Login/Logout/Logout';
+
 
 
 const drawerWidth = 220;
@@ -27,9 +29,9 @@ const Vendors = (props) => {
    
      const drawer = (
           <div>
-            <div>
-              <img src={logo} alt="" />
-            </div>
+            <Box sx={{mt:4}}>
+              <img src={logo} style={{width:"75%"}} alt="" />
+            </Box>
           <Toolbar />
    
           <VendorsLink></VendorsLink>
@@ -95,10 +97,11 @@ const Vendors = (props) => {
                   >
                     <MenuIcon />
                   </IconButton>
-                  <Item>
-                        <Typography variant="h5" noWrap component="div">
-                        Welcome 
+                  <Item sx={{display:'flex'}}>
+                        <Typography sx={{mb:2,mr:3}} variant="h5" noWrap component="div">
+                          Welcome Admin
                         </Typography>
+                        <Logout></Logout>
                   </Item>
                   <Item>
                     <Button sx={{ ml: 1, color: 'white' }}>

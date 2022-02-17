@@ -15,10 +15,10 @@ const VendorsLink = () => {
      return (
           <>
           <List sx={{mt:1}}>
-               <Link exact to="/vendors" style={{ textDecoration: 'none' }}>
-                    <Button color="inherit" sx={{ mb: 2, mr:2 }}>
-                         <VerifiedUserIcon sx={{mr:1}}></VerifiedUserIcon>
-                         Vendors
+               <Link exact to={`${url}/customer`} style={{ textDecoration: 'none' }}>
+                    <Button color="inherit" sx={{ mb: 2 }}>
+                         <GroupIcon sx={{mr:1}}></GroupIcon>
+                         Customer
                     </Button>
                </Link>
                <Link exact to={`${url}/products`} style={{ textDecoration: 'none' }}>
@@ -27,12 +27,14 @@ const VendorsLink = () => {
                          Products
                     </Button>
                </Link>
-               <Link exact to={`${url}/customer`} style={{ textDecoration: 'none' }}>
-                    <Button color="inherit" sx={{ mb: 2 }}>
-                         <GroupIcon sx={{mr:1}}></GroupIcon>
-                         Customer
+               <Link exact to="/vendors" style={{ textDecoration: 'none' }}>
+                    <Button color="inherit" sx={{ mb: 2, mr:2 }}>
+                         <VerifiedUserIcon sx={{mr:1}}></VerifiedUserIcon>
+                         Vendors
                     </Button>
                </Link>
+               
+               
                {/* <Link exact to={`${url}/contacts`} style={{ textDecoration: 'none' }}>
                     <Button color="inherit" sx={{ mb: 2,mr:1 }}>
                          <ContactPhoneIcon sx={{mr:1}}></ContactPhoneIcon>

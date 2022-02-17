@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import CircularProgress from '@mui/material/CircularProgress';
 import Alert from '@mui/material/Alert';
+import './Register.css'
 
 const Register = () => {
      const [registerData, setRegisterData] = useState({});
