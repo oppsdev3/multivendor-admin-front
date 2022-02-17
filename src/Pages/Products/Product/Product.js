@@ -44,8 +44,9 @@ function Row(props) {
                <Box sx={{ margin: 2, display:'flex' }}>
                     <ProductEdit></ProductEdit>
                     <ProductDelete product={product}></ProductDelete>
-                    <ProductDetails product={product}></ProductDetails>
+                    
                </Box>
+               <ProductDetails product={product}></ProductDetails>
                </Collapse>
           </TableCell>
           </TableRow>

@@ -3,7 +3,7 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
-const ProductDetail = () => {
+const ProductDetail = ({products}) => {
      return (
           <>
                <Grid
@@ -17,13 +17,14 @@ const ProductDetail = () => {
                     lg={4}
                     >
                     <Paper sx={{ py: 2, textAlign: 'center' }} elevation={3}>
+                         <img src={products.images} alt="" />
                          <Typography
                               sx={{ color: 'info.main' }}
                               variant="body1"
                               gutterBottom
                               component="div"
                          >
-                              {}
+                             Title: {products.title}
                          </Typography>
                          
                          <Typography
@@ -32,7 +33,34 @@ const ProductDetail = () => {
                               gutterBottom
                               component="div"
                          >
-                              {}
+                              {products.availstatus}
+                         </Typography>
+
+                         <Typography
+                              sx={{ color: 'red' }}
+                              variant="body1"
+                              gutterBottom
+                              component="div"
+                         >
+                              {products.content}
+                         </Typography>
+
+                         <Typography
+                              sx={{ color: 'red' }}
+                              variant="body1"
+                              gutterBottom
+                              component="div"
+                         >
+                             Price: {products.price}
+                         </Typography>
+                         
+                         <Typography
+                              sx={{ color: 'red' }}
+                              variant="body1"
+                              gutterBottom
+                              component="div"
+                         >
+                             Sold: {products.sold}
                          </Typography>
                     </Paper>
                </Grid>    

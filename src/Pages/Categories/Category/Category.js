@@ -13,6 +13,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import CategoryDetails from '../CategoryDetails/CategoryDetails/CategoryDetails';
 import CategoryAdd from '../CategoryAdd/CategoryAdd/CategoryAdd';
+import CategoryDelete from '../CategoryDelete/CategoryDelete';
 
 
 function Row(props) {
@@ -40,7 +41,7 @@ function Row(props) {
                <Collapse in={open} timeout="auto" unmountOnExit>
                <Box sx={{ margin: 2, display:'flex' }}>
                     <CategoryAdd></CategoryAdd>
-                     
+                    <CategoryDelete category={category}></CategoryDelete>
                </Box>
                <CategoryDetails category={category}></CategoryDetails> 
                </Collapse>

@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import Grid from '@mui/material/Grid';
+import ProductDetail from './../ProductDetail/ProductDetail';
 
 const ProductDetails = ({product}) => {
      let id = product._id
@@ -25,10 +26,8 @@ const ProductDetails = ({product}) => {
 
      return (
           <>
-               <Grid container spacing={2}>
-                    {/* {
-                         products.map(product => )
-                    } */}
+               <Grid sx={{mt:1,mb:7}} container spacing={2}>
+                    <ProductDetail products={products}></ProductDetail>
                </Grid>   
           </>
      );

@@ -9,18 +9,10 @@ const VendorProducts = ({vendor}) => {
 
      return (
           <>
-                    <Typography
-                         sx={{ color: 'info.main',mt:4 }}
-                         variant="body1"
-                         gutterBottom
-                         component="div"
-
-                    >
-                         All Products
-                    </Typography>       
                <Grid container spacing={2}>
+                       
                     {
-                         products.map(product => <VendorProduct product={product}></VendorProduct>)
+                         products.map(product => <VendorProduct key={product._id} product={product}></VendorProduct>)
                     }
                </Grid> 
           </>

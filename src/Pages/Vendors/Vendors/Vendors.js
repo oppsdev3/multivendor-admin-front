@@ -14,7 +14,7 @@ import VendorsRoute from '../VendorsRoute/VendorsRoute';
 import logo from '../../../image/logo.png'
 
 
-const drawerWidth = 200;
+const drawerWidth = 220;
 
 const Vendors = (props) => {
     

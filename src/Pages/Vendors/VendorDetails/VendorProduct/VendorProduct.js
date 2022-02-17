@@ -8,13 +8,13 @@ const VendorProduct = ({product}) => {
           <>
                <Grid
                     sx={{
-                         height: 150,
+                         height: 'auto',
                     }}
                     item
                     xs={12}
                     sm={12}
-                    md={4}
-                    lg={4}
+                    md={6}
+                    lg={6}
                     >
                     <Paper sx={{ py: 2, textAlign: 'center' }} elevation={3}>
                          <Typography
