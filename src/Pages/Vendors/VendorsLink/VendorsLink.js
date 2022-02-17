@@ -8,6 +8,7 @@ import GroupIcon from '@mui/icons-material/Group';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
 import CategoryIcon from '@mui/icons-material/Category';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 
 const VendorsLink = () => {
      let {  url } = useRouteMatch();
@@ -48,6 +49,12 @@ const VendorsLink = () => {
                     <Button color="inherit" sx={{ mb: 2,mr:1 }}>
                          <CategoryIcon sx={{mr:1}}></CategoryIcon>
                          Category
+                    </Button>
+               </Link>
+               <Link exact to={`${url}/admin`} style={{ textDecoration: 'none' }}>
+                    <Button color="inherit" sx={{ mb: 2,mr:5 }}>
+                         <AdminPanelSettingsIcon sx={{mr:1}}></AdminPanelSettingsIcon>
+                         Admin
                     </Button>
                </Link>
                

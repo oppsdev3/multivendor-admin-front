@@ -9,6 +9,7 @@ import Customers from '../../Customers/Customers/Customers';
 import Services from '../../Services/Services/Services';
 import Categories from '../../Categories/Categories/Categories';
 import Contacts from './../../Contacts/Contacts/Contacts';
+import Admin from '../../Admin/Admin/Admin';
 
 
 
@@ -36,8 +37,13 @@ const VendorsRoute = () => {
                               <Route exact path={`${path}/services`}>
                                    <Services></Services>
                               </Route>
+                              
                               <Route exact path={`${path}/categories`}>
                                    <Categories></Categories>
+                              </Route>
+                              
+                              <Route exact path={`${path}/admin`}>
+                                   <Admin></Admin>
                               </Route>
                               
                          </Switch>

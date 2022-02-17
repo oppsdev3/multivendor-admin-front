@@ -3,28 +3,28 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
-const ProductDetail = ({products}) => {
+const AdminDetail = ({adminView}) => {
      return (
           <>
-               <Grid
+             <Grid
                     sx={{
                          height: 'auto',
                     }}
                     item
                     xs={12}
                     sm={12}
-                    md={4}
-                    lg={4}
+                    md={12}
+                    lg={12}
                     >
-                    <Paper sx={{ py: 2, textAlign: 'center' }} elevation={3}>
-                         <img src={products.images} alt="" />
+                    <Paper sx={{ py: 2, textAlign: 'center' }} elevation={4}>
+                         <img src={adminView.profileImg} alt="" style={{width:'50%',borderRadius: '50%'}} />
                          <Typography
                               sx={{ color: 'info.main' }}
                               variant="body1"
                               gutterBottom
                               component="div"
                          >
-                             Title: {products.title}
+                             Title: {adminView.title}
                          </Typography>
                          
                          <Typography
@@ -33,7 +33,7 @@ const ProductDetail = ({products}) => {
                               gutterBottom
                               component="div"
                          >
-                              {products.availstatus}
+                              Role: {adminView.role}
                          </Typography>
 
                          <Typography
@@ -42,30 +42,12 @@ const ProductDetail = ({products}) => {
                               gutterBottom
                               component="div"
                          >
-                              {products.content}
-                         </Typography>
-
-                         <Typography
-                              sx={{ color: 'red' }}
-                              variant="body1"
-                              gutterBottom
-                              component="div"
-                         >
-                             Price: {products.price}
-                         </Typography>
-                         
-                         <Typography
-                              sx={{ color: 'red' }}
-                              variant="body1"
-                              gutterBottom
-                              component="div"
-                         >
-                             Sold: {products.sold}
+                             Status: {adminView.status}
                          </Typography>
                     </Paper>
-               </Grid>    
+               </Grid>      
           </>
      );
 };
 
-export default ProductDetail;
+export default AdminDetail;
