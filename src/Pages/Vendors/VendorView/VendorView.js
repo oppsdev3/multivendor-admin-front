@@ -67,7 +67,7 @@ function Row(props) {
           
           <TableCell align="center">
           <Typography
-                    sx={{ color: '#059862', fontWeight:800 }}
+                    sx={{ color: '#059862', fontWeight:700 }}
                     variant="body1"
                     gutterBottom
                     component="div"
@@ -76,7 +76,7 @@ function Row(props) {
                </Typography></TableCell>
           <TableCell align="center">
           <Typography
-                    sx={{ color: '#059862', fontWeight:800 }}
+                    sx={{ color: '#059862', fontWeight:700 }}
                     variant="body1"
                     gutterBottom
                     component="div"
@@ -114,7 +114,7 @@ const VendorView = ({vendors}) => {
                          <TableCell />
                          <TableCell align="center"> 
                               <Typography
-                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:700 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
@@ -123,7 +123,7 @@ const VendorView = ({vendors}) => {
                               </Typography>
                               </TableCell>
                          <TableCell align="center"> <Typography
-                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:700 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
@@ -131,7 +131,7 @@ const VendorView = ({vendors}) => {
                                    Vendor Email
                               </Typography></TableCell>
                          <TableCell align="center"> <Typography
-                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:700 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
@@ -140,7 +140,7 @@ const VendorView = ({vendors}) => {
                               </Typography></TableCell>
                         
                          <TableCell align="center"> <Typography
-                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:700 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
@@ -148,7 +148,7 @@ const VendorView = ({vendors}) => {
                                    Vendor Address
                               </Typography></TableCell>
                          <TableCell align="center"> <Typography
-                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:700 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"

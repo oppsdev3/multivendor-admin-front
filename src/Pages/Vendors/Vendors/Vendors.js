@@ -97,11 +97,11 @@ const Vendors = (props) => {
                   >
                     <MenuIcon />
                   </IconButton>
-                  <Item sx={{display:'flex'}}>
-                        <Typography sx={{mb:2,mr:3}} variant="h5" noWrap component="div">
-                          Welcome Admin
-                        </Typography>
-                        <Logout></Logout>
+                  <Item sx={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+                          <Typography  variant="h5" noWrap component="div">
+                            Welcome Admin
+                          </Typography>
+                          <Logout></Logout>
                   </Item>
                   <Item>
                     <Button sx={{ ml: 1, color: 'white' }}>

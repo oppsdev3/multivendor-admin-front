@@ -18,46 +18,46 @@ const Service = ({services}) => {
                          <TableRow>
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:700 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                   TITLE
+                                  Service Title
                               </Typography>
                          </TableCell>
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:700 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                   ID
+                                  Service Id
                               </Typography>
                          </TableCell>
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:700 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                   DATE
+                                 Service Date
                               </Typography>
                          </TableCell>
                          
                          </TableRow>
                     </TableHead>
                     <TableBody>
-                         {services.map((service) => (
+                         {services.map((service,index) => (
                          <TableRow
                          key={service.name}
                          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                          >
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: '#04AA6D', fontWeight:900 }}
+                                   sx={{ color: '#04AA6D', fontWeight:700 }}
                                    variant="body1"
                                    gutterBottom
                                    component="div"
@@ -67,16 +67,16 @@ const Service = ({services}) => {
                          </TableCell>
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: '#04AA6D', fontWeight:900 }}
+                                   sx={{ color: '#04AA6D', fontWeight:700 }}
                                    variant="body1"
                                    gutterBottom
                                    component="div"
                               >
-                                   {service._id}
+                                   serv - {index+1}
                               </Typography>
                          </TableCell>
                          <TableCell align="center"><Typography
-                                   sx={{ color: '#04AA6D', fontWeight:900 }}
+                                   sx={{ color: '#04AA6D', fontWeight:700 }}
                                    variant="body1"
                                    gutterBottom
                                    component="div"

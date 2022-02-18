@@ -35,7 +35,7 @@ function Row(props) {
           </TableCell>
           <TableCell align="center">
                <Typography
-                    sx={{ color: '#04AA6D', fontWeight:900 }}
+                    sx={{ color: '#04AA6D', fontWeight:700 }}
                     variant="body1"
                     gutterBottom
                     component="div"
@@ -45,7 +45,7 @@ function Row(props) {
           </TableCell>
           <TableCell align="center">
                <Typography
-                    sx={{ color: '#04AA6D', fontWeight:900 }}
+                    sx={{ color: '#04AA6D', fontWeight:700 }}
                     variant="body1"
                     gutterBottom
                     component="div"
@@ -55,7 +55,7 @@ function Row(props) {
           </TableCell>
           <TableCell align="center">
                <Typography
-                    sx={{ color: '#04AA6D', fontWeight:900 }}
+                    sx={{ color: '#04AA6D', fontWeight:700 }}
                     variant="body1"
                     gutterBottom
                     component="div"
@@ -65,7 +65,7 @@ function Row(props) {
           </TableCell>
           <TableCell align="center">
                <Typography
-                    sx={{ color: '#04AA6D', fontWeight:900 }}
+                    sx={{ color: '#04AA6D', fontWeight:700 }}
                     variant="body1"
                     gutterBottom
                     component="div"
@@ -75,7 +75,7 @@ function Row(props) {
           </TableCell>
           <TableCell align="center">
                <Typography
-                    sx={{ color: '#04AA6D', fontWeight:900 }}
+                    sx={{ color: '#04AA6D', fontWeight:700 }}
                     variant="body1"
                     gutterBottom
                     component="div"
@@ -110,45 +110,45 @@ const Product = ({products}) => {
                          <TableCell />
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:700 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                   TITLE
+                                   Product Title
                               </Typography>
                          </TableCell>
                          <TableCell align="center"><Typography
-                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:700 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                   PRICE
+                                   Product Price
                               </Typography></TableCell>
                          <TableCell align="center"><Typography
-                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:700 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                   CATEGORY
+                                   Product Category
                               </Typography></TableCell>
                          <TableCell align="center"><Typography
-                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:700 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                   DESCRIPTION
+                                   Product Description
                               </Typography></TableCell>
                          <TableCell align="center"><Typography
-                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:700 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                   VIEWS
+                                   Product Views
                               </Typography></TableCell>
                          </TableRow>
                     </TableHead>

@@ -19,7 +19,7 @@ import CustomerDetails from '../CustomerDetails/CustomerDetails/CustomerDetails'
 
 
 function Row(props) {
-     const { customer } = props;
+     const { customer,index } = props;
      const [open, setOpen] = React.useState(false);
 
      return (
@@ -36,7 +36,7 @@ function Row(props) {
           </TableCell>
           <TableCell align="center">
                <Typography
-                    sx={{ color: '#04AA6D', fontWeight:900 }}
+                    sx={{ color: '#04AA6D', fontWeight:700 }}
                     variant="body1"
                     gutterBottom
                     component="div"
@@ -48,7 +48,7 @@ function Row(props) {
                {
                     customer.status == "active" ? 
                     <Typography
-                         sx={{ color: '#04AA6D', fontWeight:900 }}
+                         sx={{ color: '#04AA6D', fontWeight:700 }}
                          variant="body1"
                          gutterBottom
                          component="div"
@@ -57,7 +57,7 @@ function Row(props) {
                     </Typography>
                     :
                     <Typography
-                         sx={{ color: 'red', fontWeight:900 }}
+                         sx={{ color: 'red', fontWeight:700 }}
                          variant="body1"
                          gutterBottom
                          component="div"
@@ -68,12 +68,12 @@ function Row(props) {
                
           </TableCell>
           <TableCell align="center"><Typography
-                         sx={{ color: '#04AA6D', fontWeight:900 }}
+                         sx={{ color: '#04AA6D', fontWeight:700 }}
                          variant="body1"
                          gutterBottom
                          component="div"
                     >
-                    {customer._id}
+                    cus - {index+1}
                     </Typography></TableCell>
           </TableRow>
           <TableRow>
@@ -103,7 +103,7 @@ const Customer = ({customers}) => {
                          <TableCell />
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:700 }}
                                    variant="h5"
                                    gutterBottom
                                    component="div"
@@ -113,7 +113,7 @@ const Customer = ({customers}) => {
                          </TableCell>
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:700 }}
                                    variant="h5"
                                    gutterBottom
                                    component="div"
@@ -123,7 +123,7 @@ const Customer = ({customers}) => {
                               </TableCell>
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:700 }}
                                    variant="h5"
                                    gutterBottom
                                    component="div"
@@ -135,8 +135,8 @@ const Customer = ({customers}) => {
                          </TableRow>
                     </TableHead>
                     <TableBody>
-                         {customers.map((customer) => (
-                              <Row key={customer._id} customer={customer} />
+                         {customers.map((customer,index) => (
+                              <Row key={customer._id} index={index} customer={customer} />
                               ))}
                     </TableBody>
                     </Table>

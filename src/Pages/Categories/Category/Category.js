@@ -17,7 +17,7 @@ import CategoryDelete from '../CategoryDelete/CategoryDelete';
 import Typography from '@mui/material/Typography';
 
 function Row(props) {
-     const { category } = props;
+     const { category,index } = props;
      const [open, setOpen] = React.useState(false);
 
      return (
@@ -34,7 +34,7 @@ function Row(props) {
           </TableCell>
           <TableCell align="center">
           <Typography
-                    sx={{ color: '#04AA6D', fontWeight:900 }}
+                    sx={{ color: '#04AA6D', fontWeight:700 }}
                     variant="body1"
                     gutterBottom
                     component="div"
@@ -43,12 +43,12 @@ function Row(props) {
                </Typography></TableCell>
           <TableCell align="center">
           <Typography
-                    sx={{ color: '#04AA6D', fontWeight:900 }}
+                    sx={{ color: '#04AA6D', fontWeight:700 }}
                     variant="body1"
                     gutterBottom
                     component="div"
                >
-                    {category._id}
+                   cat - {index+1}
                </Typography></TableCell>
          
           </TableRow>
@@ -78,43 +78,43 @@ const Category = ({categories}) => {
                          <TableCell />
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:700 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                   CATEGORY TITLE
+                                   Category Title
                               </Typography></TableCell>
                          <TableCell align="center"><Typography
-                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:700 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                   CATEGORY ID
+                                   Category Id
                               </Typography></TableCell>
                          <TableCell align="center"><Typography
-                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:700 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                   TOTAL PRODUCT
+                                   Total Product
                               </Typography></TableCell>
                          <TableCell align="center"><Typography
-                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:700 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                   TOTAL SERVICE
+                                   Total Service
                               </Typography></TableCell>
                          
                          </TableRow>
                     </TableHead>
                     <TableBody>
-                         {categories.map((category) => (
-                              <Row key={category._id} category={category} />
+                         {categories.map((category, index) => (
+                              <Row key={category._id} index={index} category={category} />
                               ))}
                     </TableBody>
                     </Table>

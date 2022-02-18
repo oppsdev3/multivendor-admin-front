@@ -29,7 +29,7 @@ const Vendor = () => {
                          <VendorManage></VendorManage>
                     </Box> */}
                </div>
-               <Box sx={{mt:4}}>
+               <Box>
                     <VendorAll></VendorAll>
                </Box>
           </div>
