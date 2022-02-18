@@ -17,7 +17,7 @@ const ProductDetail = ({products}) => {
                     lg={4}
                     >
                     <Paper sx={{ py: 2, textAlign: 'center' }} elevation={3}>
-                         <img src={products.images} alt="" />
+                         <img src={products.images} style={{width:"50%"}} alt="" />
                          <Typography
                               sx={{ color: 'info.main' }}
                               variant="body1"

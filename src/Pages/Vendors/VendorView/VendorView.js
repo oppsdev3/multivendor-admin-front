@@ -15,6 +15,7 @@ import VendorProducts from '../VendorDetails/VendorProducts/VendorProducts';
 import VendorProfile from '../VendorDetails/VendorProfile/VendorProfile';
 import VendorEdit from '../VendorEdit/VendorEdit';
 import VendorDelete from '../VendorDelete/VendorDelete';
+import Typography from '@mui/material/Typography';
 
 
 function Row(props) {
@@ -34,22 +35,66 @@ function Row(props) {
                {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                </IconButton>
           </TableCell>
-          <TableCell align="center">{vendor.name}</TableCell>
-          <TableCell align="center">{vendor.email}</TableCell>
-          <TableCell align="center">{vendor.phone}</TableCell>
-          <TableCell align="center">{vendor.role}</TableCell>
-          <TableCell align="center">{vendor.address}</TableCell>
+          <TableCell align="center">
+          <Typography
+                    sx={{ color: '#059862', fontWeight:700 }}
+                    variant="body1"
+                    gutterBottom
+                    component="div"
+               >
+                     {vendor.name}
+               </Typography>
+         </TableCell>
+          <TableCell align="center">
+          <Typography
+                    sx={{ color: '#059862', fontWeight:700 }}
+                    variant="body1"
+                    gutterBottom
+                    component="div"
+               >
+                    {vendor.email}
+               </Typography>
+          </TableCell>
+          <TableCell align="center">
+          <Typography
+                    sx={{ color: '#059862', fontWeight:700 }}
+                    variant="body1"
+                    gutterBottom
+                    component="div"
+               >
+                    {vendor.phone}
+               </Typography></TableCell>
+          
+          <TableCell align="center">
+          <Typography
+                    sx={{ color: '#059862', fontWeight:800 }}
+                    variant="body1"
+                    gutterBottom
+                    component="div"
+               >
+                    {vendor.address}
+               </Typography></TableCell>
+          <TableCell align="center">
+          <Typography
+                    sx={{ color: '#059862', fontWeight:800 }}
+                    variant="body1"
+                    gutterBottom
+                    component="div"
+               >
+                    {vendor.status}
+               </Typography></TableCell>
           </TableRow>
           <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
                <Collapse in={open} timeout="auto" unmountOnExit>
+               <VendorEdit vendor={vendor}></VendorEdit>
                <Box sx={{ margin: 4, display:'flex' }}>
+                    
+                    {/* <VendorDelete vendor={vendor}></VendorDelete> */}
                     <VendorProfile vendor={vendor}></VendorProfile>
-                    {/* <VendorEdit vendor={vendor}></VendorEdit>
-                    <VendorDelete vendor={vendor}></VendorDelete> */}
                     <VendorProducts vendor={vendor}></VendorProducts> 
-
                </Box>
+               
                </Collapse>
           </TableCell>
           </TableRow>
@@ -62,16 +107,54 @@ function Row(props) {
 const VendorView = ({vendors}) => {
      return (
           <>
-               <TableContainer component={Paper}>
+               <TableContainer sx={{mt:2, ml:2}} component={Paper}>
                     <Table aria-label="collapsible table">
                     <TableHead>
                          <TableRow>
                          <TableCell />
-                         <TableCell align="center">Name</TableCell>
-                         <TableCell align="center">Email</TableCell>
-                         <TableCell align="center">Phone</TableCell>
-                         <TableCell align="center">Role</TableCell>
-                         <TableCell align="center">Address</TableCell>
+                         <TableCell align="center"> 
+                              <Typography
+                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   variant="h6"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   Vendor Name
+                              </Typography>
+                              </TableCell>
+                         <TableCell align="center"> <Typography
+                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   variant="h6"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   Vendor Email
+                              </Typography></TableCell>
+                         <TableCell align="center"> <Typography
+                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   variant="h6"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   Vendor Phone
+                              </Typography></TableCell>
+                        
+                         <TableCell align="center"> <Typography
+                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   variant="h6"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   Vendor Address
+                              </Typography></TableCell>
+                         <TableCell align="center"> <Typography
+                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   variant="h6"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   Vendor Status
+                              </Typography></TableCell>
                          </TableRow>
                     </TableHead>
                     <TableBody>

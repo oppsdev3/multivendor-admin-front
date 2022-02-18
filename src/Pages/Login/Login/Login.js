@@ -2,14 +2,16 @@ import React,{useState} from 'react';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { Container, Typography } from '@mui/material';
+import { CircularProgress, Container, Typography } from '@mui/material';
 import { useHistory } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 
+
 const Login = () => {
      const [loginData, setLoginData] = useState({});
      const [error, setError] = useState('');
+     const [loading, setLoading] = useState(false)
      const history = useHistory();
      const location = useLocation();
 
@@ -23,7 +25,8 @@ const Login = () => {
         };
       
         const handleSubmit = e => {
-          fetch('', {
+          setLoading(true)
+          fetch('https://multivendorapi.herokuapp.com/api/admin/v1/adminlogin', {
             method: 'POST',
             headers: {
               'content-type': 'application/json',
@@ -36,17 +39,21 @@ const Login = () => {
               console.log(info.error);
                if (value) {
                     localStorage.setItem('token', value);
-                    const destination = location?.state?.from || '/dashboard';
+                    const destination = location?.state?.from || '/vendors';
                     history.replace(destination);
+                    setLoading(false)
                } else {
-                    setError(info.error);
+                    setError(info);
+                    setLoading(false)
               }
              
             });
-          const destination = location?.state?.from || '/vendors';
-          history.replace(destination);
           e.preventDefault();
         };
+
+        if(loading){
+             return <CircularProgress></CircularProgress>
+        }
      return (
           <>
                <Container className="login-style">
@@ -70,7 +77,7 @@ const Login = () => {
                                         sx={{ width: '75%', m: 1 }}
                                         onBlur={handleOnBlur}
                                         name="email"
-                                        helperText="Email ID / Phone Number"
+                                        helperText="Email ID"
                                         variant="filled"
                                    />
                                    <TextField
@@ -95,14 +102,16 @@ const Login = () => {
                                         Login
                                    </Button>
                               </form>
+                              {
+                                   error &&
+                                   <Alert severity="error">Invalid username or password</Alert>
+                              }
                          </Grid>
-
+                         
+                                
+                         
                     </Grid>
-                    {error ? (
-                         <Alert severity="error">{error}</Alert>
-                    ) : (
-                         <Alert severity="success">user logged in successfully</Alert>
-                    )}
+                    
                    
                </Container>  
           </>

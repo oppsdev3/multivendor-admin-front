@@ -14,7 +14,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import CategoryDetails from '../CategoryDetails/CategoryDetails/CategoryDetails';
 import CategoryAdd from '../CategoryAdd/CategoryAdd/CategoryAdd';
 import CategoryDelete from '../CategoryDelete/CategoryDelete';
-
+import Typography from '@mui/material/Typography';
 
 function Row(props) {
      const { category } = props;
@@ -32,8 +32,24 @@ function Row(props) {
                {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                </IconButton>
           </TableCell>
-          <TableCell align="center">{category.name}</TableCell>
-          <TableCell align="center">{category._id}</TableCell>
+          <TableCell align="center">
+          <Typography
+                    sx={{ color: '#04AA6D', fontWeight:900 }}
+                    variant="body1"
+                    gutterBottom
+                    component="div"
+               >
+                    {category.name}
+               </Typography></TableCell>
+          <TableCell align="center">
+          <Typography
+                    sx={{ color: '#04AA6D', fontWeight:900 }}
+                    variant="body1"
+                    gutterBottom
+                    component="div"
+               >
+                    {category._id}
+               </Typography></TableCell>
          
           </TableRow>
           <TableRow>
@@ -55,13 +71,44 @@ const Category = ({categories}) => {
      console.log(categories)
      return (
           <>
-              <TableContainer component={Paper}>
+              <TableContainer sx={{mt:4}} component={Paper}>
                     <Table aria-label="collapsible table">
                     <TableHead>
                          <TableRow>
                          <TableCell />
-                         <TableCell align="center">Name</TableCell>
-                         <TableCell align="center">ID</TableCell>
+                         <TableCell align="center">
+                              <Typography
+                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   variant="h6"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   CATEGORY TITLE
+                              </Typography></TableCell>
+                         <TableCell align="center"><Typography
+                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   variant="h6"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   CATEGORY ID
+                              </Typography></TableCell>
+                         <TableCell align="center"><Typography
+                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   variant="h6"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   TOTAL PRODUCT
+                              </Typography></TableCell>
+                         <TableCell align="center"><Typography
+                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   variant="h6"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   TOTAL SERVICE
+                              </Typography></TableCell>
                          
                          </TableRow>
                     </TableHead>

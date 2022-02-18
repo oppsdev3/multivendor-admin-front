@@ -36,7 +36,7 @@ function Row(props) {
           </TableCell>
           <TableCell align="center">
                <Typography
-                    sx={{ color: 'info.main', fontWeight:900 }}
+                    sx={{ color: '#04AA6D', fontWeight:900 }}
                     variant="body1"
                     gutterBottom
                     component="div"
@@ -48,7 +48,7 @@ function Row(props) {
                {
                     customer.status == "active" ? 
                     <Typography
-                         sx={{ color: 'info.main', fontWeight:900 }}
+                         sx={{ color: '#04AA6D', fontWeight:900 }}
                          variant="body1"
                          gutterBottom
                          component="div"
@@ -67,7 +67,14 @@ function Row(props) {
                }
                
           </TableCell>
-          <TableCell align="center">{customer._id}</TableCell>
+          <TableCell align="center"><Typography
+                         sx={{ color: '#04AA6D', fontWeight:900 }}
+                         variant="body1"
+                         gutterBottom
+                         component="div"
+                    >
+                    {customer._id}
+                    </Typography></TableCell>
           </TableRow>
           <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -96,7 +103,7 @@ const Customer = ({customers}) => {
                          <TableCell />
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: '#04AA6D', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:900 }}
                                    variant="h5"
                                    gutterBottom
                                    component="div"
@@ -106,7 +113,7 @@ const Customer = ({customers}) => {
                          </TableCell>
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: '#04AA6D', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:900 }}
                                    variant="h5"
                                    gutterBottom
                                    component="div"
@@ -116,7 +123,7 @@ const Customer = ({customers}) => {
                               </TableCell>
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: '#04AA6D', fontWeight:900 }}
+                                   sx={{ color: 'tomato', fontWeight:900 }}
                                    variant="h5"
                                    gutterBottom
                                    component="div"

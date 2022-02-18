@@ -10,6 +10,7 @@ const Logout = () => {
           console.log('click')
           const destination = '/login';
           history.replace(destination);
+          localStorage.clear()
           e.preventDefault()
      }
      return (

@@ -2,37 +2,17 @@ import React,{useState,useEffect} from 'react';
 import Grid from '@mui/material/Grid';
 import CircularProgress from '@mui/material/CircularProgress';
 import AdminProfile from '../AdminProfile/AdminProfile';
+import AdminEmail from '../AdminEmail/AdminEmail';
+import AdminPassword from '../AdminPassword/AdminPassword';
+import  Box  from '@mui/material/Box';
 
-const Admin = () => {
-     const [adminProfile,setAdminProfile] = useState([])
-     const [loading,setLoading] = useState(false)
-     const token = localStorage.getItem('token')
-     useEffect(()=>{
-          setLoading(true)
-          fetch('https://multivendorapi.herokuapp.com/api/admin/adminroute/alladmin', {
-               method: 'GET',
-               headers: {
-               'content-type': 'application/json',
-               'Authorization': token
-               },
-               body: JSON.stringify(),
-
-          })
-          .then(res => res.json())
-          .then(data => {
-               console.log(data)
-               setAdminProfile(data)
-               setLoading(false)
-          })
-
-     },[])
-     if(loading){
-         return <CircularProgress />
-     }
+const Admin = () => {   
      return (
-          <div>
-               <AdminProfile adminProfile={adminProfile}></AdminProfile>
-          </div>
+          <Box sx={{display:'flex',mx:5,mt:2}}>
+               {/* <AdminProfile adminProfile={adminProfile}></AdminProfile> */}
+               <AdminEmail></AdminEmail>
+               <AdminPassword></AdminPassword>
+          </Box>
      );
 };
 

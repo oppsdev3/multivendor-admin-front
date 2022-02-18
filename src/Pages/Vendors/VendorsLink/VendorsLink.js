@@ -27,6 +27,12 @@ const VendorsLink = () => {
                          Products
                     </Button>
                </Link>
+               <Link exact to={`${url}/categories`} style={{ textDecoration: 'none' }}>
+                    <Button color="inherit" sx={{ mb: 2,mr:1 }}>
+                         <CategoryIcon sx={{mr:1}}></CategoryIcon>
+                         Category
+                    </Button>
+               </Link>
                <Link exact to="/vendors" style={{ textDecoration: 'none' }}>
                     <Button color="inherit" sx={{ mb: 2, mr:2 }}>
                          <VerifiedUserIcon sx={{mr:1}}></VerifiedUserIcon>
@@ -47,12 +53,7 @@ const VendorsLink = () => {
                          Services
                     </Button>
                </Link>
-               <Link exact to={`${url}/categories`} style={{ textDecoration: 'none' }}>
-                    <Button color="inherit" sx={{ mb: 2,mr:1 }}>
-                         <CategoryIcon sx={{mr:1}}></CategoryIcon>
-                         Category
-                    </Button>
-               </Link>
+               
                <Link exact to={`${url}/admin`} style={{ textDecoration: 'none' }}>
                     <Button color="inherit" sx={{ mb: 2,mr:5 }}>
                          <AdminPanelSettingsIcon sx={{mr:1}}></AdminPanelSettingsIcon>

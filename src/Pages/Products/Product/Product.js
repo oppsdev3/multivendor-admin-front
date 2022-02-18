@@ -14,6 +14,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import ProductEdit from '../ProductEdit/ProductEdit';
 import ProductDelete from '../ProductDelete/ProductDelete';
 import ProductDetails from '../ProductDetails/ProductDetails/ProductDetails';
+import Typography from '@mui/material/Typography';
 
 
 function Row(props) {
@@ -32,11 +33,56 @@ function Row(props) {
                {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                </IconButton>
           </TableCell>
-          <TableCell align="center">{product.title}</TableCell>
-          <TableCell align="center">{product.price}</TableCell>
-          <TableCell align="center">{product.sold}</TableCell>
-          <TableCell align="center">{product.description}</TableCell>
-          <TableCell align="center">{product.views}</TableCell>
+          <TableCell align="center">
+               <Typography
+                    sx={{ color: '#04AA6D', fontWeight:900 }}
+                    variant="body1"
+                    gutterBottom
+                    component="div"
+               >
+                    {product.title}
+               </Typography>
+          </TableCell>
+          <TableCell align="center">
+               <Typography
+                    sx={{ color: '#04AA6D', fontWeight:900 }}
+                    variant="body1"
+                    gutterBottom
+                    component="div"
+               >
+                    {product.price}
+               </Typography>
+          </TableCell>
+          <TableCell align="center">
+               <Typography
+                    sx={{ color: '#04AA6D', fontWeight:900 }}
+                    variant="body1"
+                    gutterBottom
+                    component="div"
+               >
+                    {product.sold}
+               </Typography>
+          </TableCell>
+          <TableCell align="center">
+               <Typography
+                    sx={{ color: '#04AA6D', fontWeight:900 }}
+                    variant="body1"
+                    gutterBottom
+                    component="div"
+               >
+                    {product.description}
+               </Typography>
+          </TableCell>
+          <TableCell align="center">
+               <Typography
+                    sx={{ color: '#04AA6D', fontWeight:900 }}
+                    variant="body1"
+                    gutterBottom
+                    component="div"
+               >
+                    {product.views}
+               </Typography>
+          </TableCell>
           </TableRow>
           <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -44,7 +90,6 @@ function Row(props) {
                <Box sx={{ margin: 2, display:'flex' }}>
                     <ProductEdit></ProductEdit>
                     <ProductDelete product={product}></ProductDelete>
-                    
                </Box>
                <ProductDetails product={product}></ProductDetails>
                </Collapse>
@@ -58,16 +103,53 @@ const Product = ({products}) => {
      console.log(products)
      return (
           <>
-               <TableContainer component={Paper}>
+               <TableContainer sx={{mt:4,ml:2}} component={Paper}>
                     <Table aria-label="collapsible table">
                     <TableHead>
                          <TableRow>
                          <TableCell />
-                         <TableCell align="center">Title</TableCell>
-                         <TableCell align="center">Price</TableCell>
-                         <TableCell align="center">Sold</TableCell>
-                         <TableCell align="center">Description</TableCell>
-                         <TableCell align="center">Views</TableCell>
+                         <TableCell align="center">
+                              <Typography
+                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   variant="h6"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   TITLE
+                              </Typography>
+                         </TableCell>
+                         <TableCell align="center"><Typography
+                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   variant="h6"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   PRICE
+                              </Typography></TableCell>
+                         <TableCell align="center"><Typography
+                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   variant="h6"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   CATEGORY
+                              </Typography></TableCell>
+                         <TableCell align="center"><Typography
+                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   variant="h6"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   DESCRIPTION
+                              </Typography></TableCell>
+                         <TableCell align="center"><Typography
+                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   variant="h6"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   VIEWS
+                              </Typography></TableCell>
                          </TableRow>
                     </TableHead>
                     <TableBody>

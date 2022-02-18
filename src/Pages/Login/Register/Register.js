@@ -92,11 +92,7 @@ const Register = () => {
                          </Grid>
 
                     </Grid>
-                    {error ? (
-                         <Alert severity="error">{error}</Alert>
-                    ) : (
-                         <Alert severity="success">user registered in successfully</Alert>
-                    )}
+                    
                    
                </Container>     
           </>

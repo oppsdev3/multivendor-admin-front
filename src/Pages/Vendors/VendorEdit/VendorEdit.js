@@ -10,13 +10,33 @@ const VendorEdit = ({vendor}) => {
      return (
           <>
               
-          <Button  size='small' variant="contained" onClick={handleOpen}>
-               Edit 
-          </Button> 
+              {
+                    vendor.status === "active" ? 
+                    <Button
+                         onClick={handleOpen}
+                         variant="contained"
+                         sx={{mx:2,mt:2}}
+                         color="success"
+                         size='small'
+                    >
+                         Inactive
+                    </Button>
+                    :
+                    <Button
+                         onClick={handleOpen}
+                         variant="contained"
+                         sx={{mx:2}}
+                         color="success"
+                         size='small'
+                    >
+                    Active
+                    </Button>
+
+               }
           {/* <Button sx={{ml:2}} size='small' variant="contained" onClick={handleOpen}>
                Edit Status
           </Button>  */}
-          <VendorsPending vendor={vendor} open={open} handleClose={handleClose}></VendorsPending>
+          {/* <VendorsPending vendor={vendor} open={open} handleClose={handleClose}></VendorsPending> */}
           {/* <VendorRole vendor={vendor} open={open} handleClose={handleClose}></VendorRole> */}
           </>
      );

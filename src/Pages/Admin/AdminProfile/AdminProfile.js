@@ -12,7 +12,7 @@ import TableRow from '@mui/material/TableRow';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import AdminDetails from '../AdminDetails/AdminDetails/AdminDetails';
-
+import Typography from '@mui/material/Typography';
 
 function Row(props) {
      const { admin } = props;
@@ -30,11 +30,46 @@ function Row(props) {
                {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                </IconButton>
           </TableCell>
-          <TableCell align="center">{admin._id}</TableCell>
-          <TableCell align="center">{admin.name}</TableCell>
-          <TableCell align="center">{admin.phoneNo}</TableCell>
-          <TableCell align="center">{admin.email}</TableCell>
-          <TableCell align="center">{admin.address}</TableCell>
+          <TableCell align="center"><Typography
+                    sx={{ color: '#04AA6D', fontWeight:900 }}
+                    variant="body1"
+                    gutterBottom
+                    component="div"
+               >
+                    {admin._id}
+               </Typography></TableCell>
+          <TableCell align="center"><Typography
+                    sx={{ color: '#04AA6D', fontWeight:900 }}
+                    variant="body1"
+                    gutterBottom
+                    component="div"
+               >
+                    {admin.name}
+               </Typography></TableCell>
+          <TableCell align="center"><Typography
+                    sx={{ color: '#04AA6D', fontWeight:900 }}
+                    variant="body1"
+                    gutterBottom
+                    component="div"
+               >
+                    {admin.phoneNo}
+               </Typography></TableCell>
+          <TableCell align="center"><Typography
+                    sx={{ color: '#04AA6D', fontWeight:900 }}
+                    variant="body1"
+                    gutterBottom
+                    component="div"
+               >
+                    {admin.email}
+               </Typography></TableCell>
+          <TableCell align="center"><Typography
+                    sx={{ color: '#04AA6D', fontWeight:900 }}
+                    variant="body1"
+                    gutterBottom
+                    component="div"
+               >
+                    {admin.address}
+               </Typography></TableCell>
           </TableRow>
           <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -57,11 +92,48 @@ const AdminProfile = ({adminProfile}) => {
                     <TableHead>
                          <TableRow>
                          <TableCell />
-                         <TableCell align="center">ID</TableCell>
-                         <TableCell align="center">Name</TableCell>
-                         <TableCell align="center">Phone</TableCell>
-                         <TableCell align="center">Email</TableCell>
-                         <TableCell align="center">Address</TableCell>
+                         <TableCell align="center">
+                              <Typography
+                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   variant="h6"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   ID
+                              </Typography>
+                         </TableCell>
+                         <TableCell align="center"><Typography
+                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   variant="h6"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   NAME
+                              </Typography></TableCell>
+                         <TableCell align="center"><Typography
+                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   variant="h6"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   PHONE
+                              </Typography></TableCell>
+                         <TableCell align="center"><Typography
+                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   variant="h6"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   EMAIL
+                              </Typography></TableCell>
+                         <TableCell align="center"><Typography
+                                   sx={{ color: 'tomato', fontWeight:900 }}
+                                   variant="h6"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   ADDRESS
+                              </Typography></TableCell>
                          </TableRow>
                     </TableHead>
                     <TableBody>

@@ -112,11 +112,7 @@ const OtpVerification = () => {
                          </Grid>
 
                     </Grid>
-                    {error ? (
-                         <Alert severity="error">{error}</Alert>
-                    ) : (
-                         <Alert severity="success">user logged in successfully</Alert>
-                    )}
+                    
                    
                </Container>      
           </>
