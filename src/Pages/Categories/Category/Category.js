@@ -101,14 +101,6 @@ const Category = ({categories}) => {
                               >
                                    Total Product
                               </Typography></TableCell>
-                         <TableCell align="center"><Typography
-                                   sx={{ color: 'tomato', fontWeight:700 }}
-                                   variant="h6"
-                                   gutterBottom
-                                   component="div"
-                              >
-                                   Total Service
-                              </Typography></TableCell>
                          
                          </TableRow>
                     </TableHead>

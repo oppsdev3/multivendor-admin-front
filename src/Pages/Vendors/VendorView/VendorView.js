@@ -62,7 +62,7 @@ function Row(props) {
                     gutterBottom
                     component="div"
                >
-                    {vendor.phone}
+                    {vendor.phoneNo}
                </Typography></TableCell>
           
           <TableCell align="center">
