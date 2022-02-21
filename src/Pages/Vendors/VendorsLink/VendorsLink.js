@@ -9,6 +9,7 @@ import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
 import CategoryIcon from '@mui/icons-material/Category';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import MessageIcon from '@mui/icons-material/Message';
 
 const VendorsLink = () => {
      let {  url } = useRouteMatch();
@@ -58,6 +59,12 @@ const VendorsLink = () => {
                     <Button color="inherit" sx={{ mb: 2,mr:5 }}>
                          <AdminPanelSettingsIcon sx={{mr:1}}></AdminPanelSettingsIcon>
                          Admin
+                    </Button>
+               </Link>
+               <Link exact to={`${url}/chat`} style={{ textDecoration: 'none' }}>
+                    <Button color="inherit" sx={{ mb: 2,mr:6 }}>
+                         <MessageIcon sx={{mr:1}}></MessageIcon>
+                         Chat
                     </Button>
                </Link>
                

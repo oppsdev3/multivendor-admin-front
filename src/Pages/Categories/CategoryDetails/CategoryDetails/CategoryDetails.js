@@ -21,8 +21,8 @@ const CategoryDetails = ({category}) => {
           })
           .then(res => res.json())
           .then(data => {
-               console.log(data)
-               setCategories(data)
+               console.log(data.productcount)
+               setCategories(data.category)
                setLoading(false)
           })
 

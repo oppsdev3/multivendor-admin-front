@@ -59,7 +59,7 @@ function Row(props) {
                     {/* <CategoryAdd></CategoryAdd> */}
                     <CategoryDelete category={category}></CategoryDelete>
                </Box>
-               <CategoryDetails category={category}></CategoryDetails> 
+                    <CategoryDetails category={category}></CategoryDetails> 
                </Collapse>
           </TableCell>
           </TableRow>
