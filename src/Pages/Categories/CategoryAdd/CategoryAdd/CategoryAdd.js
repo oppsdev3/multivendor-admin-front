@@ -9,7 +9,7 @@ const CategoryAdd = () => {
      return (
           <div>
                <Button  size='small' variant="contained" onClick={handleOpen}>
-                    ADD NEW
+                    ADD NEW Category
                </Button> 
                <CategoryModal open={open} handleClose={handleClose}></CategoryModal>
           </div>

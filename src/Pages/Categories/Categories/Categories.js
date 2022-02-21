@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Grid from '@mui/material/Grid';
 import CircularProgress from '@mui/material/CircularProgress';
 import Category from './../Category/Category';
+import CategoryAdd from '../CategoryAdd/CategoryAdd/CategoryAdd';
 
 const Categories = () => {
      const [categories,setCategories] = useState([])
@@ -30,8 +31,9 @@ const Categories = () => {
          return <CircularProgress />
      }
      return (
-          <>
-              <Category categories={categories}></Category> 
+          <>   
+               <CategoryAdd></CategoryAdd>
+               <Category categories={categories}></Category> 
           </>
      );
 };
