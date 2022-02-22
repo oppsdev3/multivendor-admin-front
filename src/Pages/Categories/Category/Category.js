@@ -50,18 +50,25 @@ function Row(props) {
                >
                    cat - {index+1}
                </Typography></TableCell>
+          <TableCell align="center">
+              
+          </TableCell>
+          <TableCell align="center">
+               <CategoryDelete category={category}></CategoryDelete>
+          </TableCell>
+
          
           </TableRow>
           <TableRow>
-          <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
-               <Collapse in={open} timeout="auto" unmountOnExit>
-               <Box sx={{ margin: 2, display:'flex' }}>
-                    {/* <CategoryAdd></CategoryAdd> */}
-                    <CategoryDelete category={category}></CategoryDelete>
-               </Box>
-                    <CategoryDetails category={category}></CategoryDetails> 
-               </Collapse>
-          </TableCell>
+               <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
+                    <Collapse in={open} timeout="auto" unmountOnExit>
+                    <Box sx={{ margin: 2, display:'flex' }}>
+                         {/* <CategoryAdd></CategoryAdd> */}
+                         
+                    </Box>
+                         <CategoryDetails category={category}></CategoryDetails> 
+                    </Collapse>
+               </TableCell>
           </TableRow>
      </React.Fragment>
      );
@@ -101,6 +108,16 @@ const Category = ({categories}) => {
                               >
                                    Total Product
                               </Typography></TableCell>
+                         <TableCell align="center">
+                              <Typography
+                                   sx={{ color: 'tomato', fontWeight:700 }}
+                                   variant="h6"
+                                   gutterBottom
+                                   component="div"
+                              >
+                                   Operation
+                              </Typography>
+                         </TableCell>
                          
                          </TableRow>
                     </TableHead>
