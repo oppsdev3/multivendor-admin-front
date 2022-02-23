@@ -26,7 +26,7 @@ const ProductDetails = ({product}) => {
 
      return (
           <>
-               <Grid sx={{mt:1}} container spacing={2}>
+               <Grid sx={{m:1}} container spacing={2}>
                     <ProductDetail products={products}></ProductDetail>
                </Grid>   
           </>

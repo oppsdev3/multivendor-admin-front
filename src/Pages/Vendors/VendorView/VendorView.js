@@ -83,12 +83,15 @@ function Row(props) {
                >
                     {vendor.status}
                </Typography></TableCell>
+          <TableCell align="center">
+          <VendorEdit vendor={vendor}></VendorEdit>
+          </TableCell>
           </TableRow>
           <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
                <Collapse in={open} timeout="auto" unmountOnExit>
-               <VendorEdit vendor={vendor}></VendorEdit>
-               <Box sx={{ margin: 4, display:'flex' }}>
+              
+               <Box sx={{ margin:1, display:'flex' }}>
                     
                     {/* <VendorDelete vendor={vendor}></VendorDelete> */}
                     <VendorProfile vendor={vendor}></VendorProfile>

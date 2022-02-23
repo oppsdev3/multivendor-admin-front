@@ -25,7 +25,7 @@ const CustomerDetails = ({customer}) => {
      },[])
      return (
           <>
-               <Grid sx={{mt:3}} container spacing={2}>
+               <Grid sx={{}} container spacing={2}>
                     <CustomerDetail customers={customers}></CustomerDetail>
                </Grid>    
           </>

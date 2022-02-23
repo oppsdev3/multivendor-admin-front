@@ -75,12 +75,20 @@ function Row(props) {
                     >
                     cus - {index+1}
                     </Typography></TableCell>
+          <TableCell align="center"><Typography
+                         sx={{ color: '#04AA6D', fontWeight:700 }}
+                         variant="body1"
+                         gutterBottom
+                         component="div"
+                    >
+                    <CustomerUpdate customer={customer}></CustomerUpdate>
+                    </Typography></TableCell>
           </TableRow>
           <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
                <Collapse in={open} timeout="auto" unmountOnExit>
                <Box sx={{ margin: 2, display:'flex' }}>
-                    <CustomerUpdate customer={customer}></CustomerUpdate>
+                    
                     {/* <CustomerDelete customer={customer}></CustomerDelete> */}
                     
                </Box>

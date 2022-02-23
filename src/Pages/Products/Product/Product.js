@@ -83,13 +83,16 @@ function Row(props) {
                     {product.views}
                </Typography>
           </TableCell>
+          <TableCell align="center">
+               <ProductDelete product={product}></ProductDelete>
+          </TableCell>
           </TableRow>
           <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
                <Collapse in={open} timeout="auto" unmountOnExit>
                <Box sx={{ margin: 2, display:'flex' }}>
                     <ProductEdit></ProductEdit>
-                    <ProductDelete product={product}></ProductDelete>
+                    
                </Box>
                <ProductDetails product={product}></ProductDetails>
                </Collapse>
