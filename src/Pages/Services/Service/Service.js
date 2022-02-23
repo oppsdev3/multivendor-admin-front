@@ -36,16 +36,7 @@ const Service = ({services}) => {
                                   Service Id
                               </Typography>
                          </TableCell>
-                         <TableCell align="center">
-                              <Typography
-                                   sx={{ color: 'tomato', fontWeight:700 }}
-                                   variant="h6"
-                                   gutterBottom
-                                   component="div"
-                              >
-                                 Service Date
-                              </Typography>
-                         </TableCell>
+                         
                          
                          </TableRow>
                     </TableHead>
@@ -75,14 +66,7 @@ const Service = ({services}) => {
                                    serv - {index+1}
                               </Typography>
                          </TableCell>
-                         <TableCell align="center"><Typography
-                                   sx={{ color: '#04AA6D', fontWeight:700 }}
-                                   variant="body1"
-                                   gutterBottom
-                                   component="div"
-                              >
-                                   {service.updatedAt}
-                              </Typography></TableCell>
+                         
                          </TableRow>
                          ))}
                     </TableBody>

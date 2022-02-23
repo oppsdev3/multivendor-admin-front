@@ -1,9 +1,8 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
-import { useForm } from "react-hook-form";
 
 
 
@@ -22,24 +21,38 @@ const style = {
 
 const CategoryModal = ({ open, handleClose }) => {
      const token = localStorage.getItem('token')
-     console.log(token)
-     const { register, handleSubmit } = useForm();
-     const onSubmit = data => {
-          
-          console.log(data)
+     
+     const [name, setName] = useState('') 
+     const [image,setImage] = useState('')
+
+     const handleNameChange = (e) =>{
+          setName(e.target.value)
+          e.preventDefault()
+     }
+     const handleImageChange = (e) =>{
+          setImage(e.target.value)
+          e.preventDefault()
+     }
+     const handleSubmit = e => {
+          const category = {
+               name: name,
+               imgUrl:image
+          }
+          console.log(category)
           fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/allcategory`, {
                method: 'POST',
                headers: {
                     'content-type': 'application/json',
                     'Authorization': token
                },
-               body: JSON.stringify(data),
+               body: JSON.stringify(category),
                })
                .then(res => res.json())
                .then(info => {
                     console.log(info);
                     handleClose();
                });
+          e.preventDefault()
      }
      return (
           <>
@@ -52,27 +65,22 @@ const CategoryModal = ({ open, handleClose }) => {
                <Box sx={style}>
                     <Grid>
                          <Box> 
-                              <form onSubmit={handleSubmit(onSubmit)}>
+                              <form onSubmit={handleSubmit}>
                                    <Box sx={{textAlign:'center'}}>
                                         <TextField 
                                         sx={{mb:3,width:'75%'}}  
                                         required
                                         id="filled-required"
                                         label="name"
-                                        
-                                        defaultValue=""
-                                        variant="filled"
-                                        size='small' {...register("name", { required: true, maxLength: 20 })} />
+                                        onChange={handleNameChange}
+                                        />
 
-                                        <TextField 
-                                        sx={{mb:3,width:'75%'}}  
-                                        required
-                                        id="filled-required"
-                                        label="img-url"
-                                        defaultValue=""
-                                   
-                                        variant="filled"
-                                        size='small'{...register("imgUrl", { required: true })} />
+                                        <input 
+                                        required 
+                                        type="file"
+                                        name ="upload"
+                                        onChange={handleImageChange}
+                                        />
 
                                         
                                    </Box>

@@ -16,7 +16,7 @@ import Logout from '../../Login/Logout/Logout';
 
 
 
-const drawerWidth = 220;
+const drawerWidth = 200;
 
 const Vendors = (props) => {
     
@@ -28,34 +28,34 @@ const Vendors = (props) => {
      };
    
      const drawer = (
-          <div>
+          <Box sx={{backgroundColor:''}}>
             <Box sx={{mt:4}}>
-              <img src={logo} style={{width:"75%"}} alt="" />
+              <img src={logo} style={{width:"50%"}} alt="" />
             </Box>
           <Toolbar />
    
           <VendorsLink></VendorsLink>
-       </div>
+          {/* <VendorsLink></VendorsLink> */}
+        </Box>
      );
    
-     const container =
-       window !== undefined ? () => window().document.body : undefined;
+     const container = window !== undefined ? () => window().document.body : undefined;
    
-     function Item(props) {
+      function Item(props) {
           const { sx, ...other } = props;
           return (
           <Box
-               sx={{
-               bgcolor: 'primary.main',
-               color: 'white',
-               borderRadius: 1,
-               textAlign: 'center',
-               fontSize: '1rem',
-               fontWeight: '700',
-               ...sx,
-               }}
-               {...other}
-          />
+                sx={{
+                bgcolor: 'primary.main',
+                color: 'white',
+                borderRadius: 1,
+                textAlign: 'center',
+                fontSize: '1rem',
+                fontWeight: '700',
+                ...sx,
+                }}
+                {...other}
+            />
           );
           }
    
@@ -120,27 +120,27 @@ const Vendors = (props) => {
           aria-label="mailbox folders"
         >
                <Drawer
-               container={container}
-               variant="temporary"
-               open={mobileOpen}
-               onClose={handleDrawerToggle}
-               ModalProps={{
-               keepMounted: true, // Better open performance on mobile.
-               }}
-               sx={{
-               display: { xs: 'block', sm: 'none' },
-               '& .MuiDrawer-paper': {
-                    boxSizing: 'border-box',
-                    width: drawerWidth,
-               },
-               }}
-               >
-               {drawer}
+                container={container}
+                variant="temporary"
+                open={mobileOpen}
+                onClose={handleDrawerToggle}
+                ModalProps={{
+                keepMounted: true, // Better open performance on mobile.
+                }}
+                sx={{
+                display: { xs: 'block', sm: 'none' },
+                '& .MuiDrawer-paper': {
+                      boxSizing: 'border-box',
+                      width: drawerWidth,
+                },
+                }}
+                >
+                {drawer}
                </Drawer>
                <Drawer
                variant="permanent"
                sx={{
-               display: { xs: 'none', sm: 'block' },
+               display: { xs: 'none', sm: 'block',backgroundColor:'yellow' },
                '& .MuiDrawer-paper': {
                     boxSizing: 'border-box',
                     width: drawerWidth,
