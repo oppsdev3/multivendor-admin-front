@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Grid from '@mui/material/Grid';
 import CircularProgress from '@mui/material/CircularProgress';
 import Category from './../Category/Category';
 import CategoryAdd from '../CategoryAdd/CategoryAdd/CategoryAdd';

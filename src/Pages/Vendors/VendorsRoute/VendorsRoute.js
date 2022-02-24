@@ -10,6 +10,7 @@ import Categories from '../../Categories/Categories/Categories';
 import Contacts from './../../Contacts/Contacts/Contacts';
 import Admin from '../../Admin/Admin/Admin';
 import Messages from '../../Messages/Messages/Messages';
+import Banners from '../../Banners/Banners/Banners';
 
 
 
@@ -47,6 +48,9 @@ const VendorsRoute = () => {
                               </Route>
                               <Route exact path={`${path}/chat`}>
                                    <Messages></Messages>
+                              </Route>
+                              <Route exact path={`${path}/banner`}>
+                                   <Banners></Banners>
                               </Route>
                               
                          </Switch>

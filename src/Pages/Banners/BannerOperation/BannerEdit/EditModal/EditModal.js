@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
 
+
 const style = {
      position: 'absolute',
      top: '50%',
@@ -16,11 +17,12 @@ const style = {
      p: 4,
    };
 
-const ServicesModal = ({ open, handleClose }) => {
+const EditModal = ({ open, handleClose,banner }) => {
      const token = localStorage.getItem('token')
-     
      const [name, setName] = useState('') 
      const [image,setImage] = useState('')
+     let id = banner._id
+     console.log(id)
 
      const handleNameChange = (e) =>{
           setName(e.target.value)
@@ -31,18 +33,18 @@ const ServicesModal = ({ open, handleClose }) => {
           e.preventDefault()
      }
      const handleSubmit = e => {
-          const category = {
-               name: name,
-               imgUrl:image
+          const bannerInfo = {
+               title: name,
+               imgUrl:image,
           }
-          console.log(category)
-          fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/allservice`, {
-               method: 'POST',
+          console.log(bannerInfo)
+          fetch(`https://multivendorapi.herokuapp.com/api/banner/${id}`, {
+               method: 'PATCH',
                headers: {
                     'content-type': 'application/json',
                     'Authorization': token
                },
-               body: JSON.stringify(category),
+               body: JSON.stringify(bannerInfo),
                })
                .then(res => res.json())
                .then(info => {
@@ -52,8 +54,8 @@ const ServicesModal = ({ open, handleClose }) => {
           e.preventDefault()
      }
      return (
-          <>
-             <Modal
+          <div>
+                <Modal
                     open={open}
                     onClose={handleClose}
                     aria-labelledby="modal-modal-title"
@@ -68,31 +70,28 @@ const ServicesModal = ({ open, handleClose }) => {
                                         sx={{mb:3,width:'75%'}}  
                                         required
                                         id="filled-required"
-                                        label="name"
+                                        label="title"
                                         onChange={handleNameChange}
                                         variant="filled"
                                         />
-
                                         <input 
                                         required 
                                         type="file"
                                         name ="upload"
                                         onChange={handleImageChange}
-                                        />
-
-                                        
+                                        />     
                                    </Box>
 
-                                   <Box sx={{ textAlign:'center'}}>
+                                   <Box sx={{mt:2, textAlign:'center'}}>
                                         <input type="submit" />
                                    </Box>
                               </form>
                          </Box>
                     </Grid>
                </Box>
-               </Modal>        
-          </>
+               </Modal>      
+          </div>
      );
 };
 
-export default ServicesModal;
+export default EditModal;
