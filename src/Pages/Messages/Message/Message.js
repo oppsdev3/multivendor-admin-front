@@ -7,6 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import MessagesReply from '../MessagesReply/MessagesReply/MessagesReply';
 
 const Message = ({messages}) => {
      return (
@@ -57,7 +58,7 @@ const Message = ({messages}) => {
                          >
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: '#04AA6D', fontWeight:700 }}
+                                   sx={{   fontWeight:700 }}
                                    variant="body1"
                                    gutterBottom
                                    component="div"
@@ -67,7 +68,7 @@ const Message = ({messages}) => {
                          </TableCell>
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: '#04AA6D', fontWeight:700 }}
+                                   sx={{  fontWeight:700 }}
                                    variant="body1"
                                    gutterBottom
                                    component="div"
@@ -76,13 +77,16 @@ const Message = ({messages}) => {
                               </Typography>
                          </TableCell>
                          <TableCell align="center"><Typography
-                                   sx={{ color: '#04AA6D', fontWeight:700 }}
+                                   sx={{ fontWeight:700 }}
                                    variant="body1"
                                    gutterBottom
                                    component="div"
                               >
                                    {message.sender.phoneNo}
                               </Typography></TableCell>
+                              <TableCell align="center">
+                                   <MessagesReply></MessagesReply>
+                              </TableCell>
                          </TableRow>
                          ))}
                     </TableBody>

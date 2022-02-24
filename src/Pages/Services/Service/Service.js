@@ -36,8 +36,6 @@ const Service = ({services}) => {
                                   Service Id
                               </Typography>
                          </TableCell>
-                         
-                         
                          </TableRow>
                     </TableHead>
                     <TableBody>
@@ -48,7 +46,7 @@ const Service = ({services}) => {
                          >
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: '#04AA6D', fontWeight:700 }}
+                                   sx={{ fontWeight:700 }}
                                    variant="body1"
                                    gutterBottom
                                    component="div"
@@ -58,7 +56,7 @@ const Service = ({services}) => {
                          </TableCell>
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: '#04AA6D', fontWeight:700 }}
+                                   sx={{ fontWeight:700 }}
                                    variant="body1"
                                    gutterBottom
                                    component="div"

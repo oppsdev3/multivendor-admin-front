@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 import Service from './../Service/Service';
+import ServicesAdd from '../ServicesAdd/ServicesAdd/ServicesAdd';
 
 const Services = () => {
      const [loading,setLoading] = useState(false)
@@ -30,6 +31,7 @@ const Services = () => {
      }
      return (
           <div>
+               <ServicesAdd></ServicesAdd>
                <Service services={services}></Service>
           </div>
      );

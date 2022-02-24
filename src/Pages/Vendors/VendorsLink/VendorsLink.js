@@ -10,6 +10,7 @@ import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices
 import CategoryIcon from '@mui/icons-material/Category';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import MessageIcon from '@mui/icons-material/Message';
+import AdUnitsIcon from '@mui/icons-material/AdUnits';
 
 const VendorsLink = () => {
      let {  url } = useRouteMatch();
@@ -65,6 +66,12 @@ const VendorsLink = () => {
                     <Button color="inherit" sx={{ mb: 2,mr:6 }}>
                          <MessageIcon sx={{mr:1}}></MessageIcon>
                          Chat
+                    </Button>
+               </Link>
+               <Link exact to={`${url}/banner`} style={{ textDecoration: 'none' }}>
+                    <Button color="inherit" sx={{ mb: 2,mr:4 }}>
+                         <AdUnitsIcon sx={{mr:1}}></AdUnitsIcon>
+                         Banner
                     </Button>
                </Link>
                

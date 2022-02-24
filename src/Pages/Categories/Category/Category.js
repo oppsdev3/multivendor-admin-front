@@ -34,7 +34,7 @@ function Row(props) {
           </TableCell>
           <TableCell align="center">
           <Typography
-                    sx={{ color: '#04AA6D', fontWeight:700 }}
+                    sx={{  fontWeight:700 }}
                     variant="body1"
                     gutterBottom
                     component="div"
@@ -43,7 +43,7 @@ function Row(props) {
                </Typography></TableCell>
           <TableCell align="center">
           <Typography
-                    sx={{ color: '#04AA6D', fontWeight:700 }}
+                    sx={{ fontWeight:700 }}
                     variant="body1"
                     gutterBottom
                     component="div"

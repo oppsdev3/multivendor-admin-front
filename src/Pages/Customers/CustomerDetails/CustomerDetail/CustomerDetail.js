@@ -21,7 +21,7 @@ const CustomerDetail = ({customers}) => {
                          
                          
                          <Typography
-                              sx={{ color: '#04AA6D',fontWeight:700 }}
+                              sx={{ fontWeight:700 }}
                               variant="h6"
                               gutterBottom
                               component="div"

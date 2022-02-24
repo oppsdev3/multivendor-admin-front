@@ -36,7 +36,7 @@ function Row(props) {
           </TableCell>
           <TableCell align="center">
                <Typography
-                    sx={{ color: '#04AA6D', fontWeight:700 }}
+                    sx={{  fontWeight:700 }}
                     variant="body1"
                     gutterBottom
                     component="div"
@@ -48,7 +48,7 @@ function Row(props) {
                {
                     customer.status == "active" ? 
                     <Typography
-                         sx={{ color: '#04AA6D', fontWeight:700 }}
+                         sx={{  fontWeight:700 }}
                          variant="body1"
                          gutterBottom
                          component="div"
@@ -68,21 +68,16 @@ function Row(props) {
                
           </TableCell>
           <TableCell align="center"><Typography
-                         sx={{ color: '#04AA6D', fontWeight:700 }}
+                         sx={{  fontWeight:700 }}
                          variant="body1"
                          gutterBottom
                          component="div"
                     >
                     cus - {index+1}
                     </Typography></TableCell>
-          <TableCell align="center"><Typography
-                         sx={{ color: '#04AA6D', fontWeight:700 }}
-                         variant="body1"
-                         gutterBottom
-                         component="div"
-                    >
-                    <CustomerUpdate customer={customer}></CustomerUpdate>
-                    </Typography></TableCell>
+                    <TableCell align="center">
+                         <CustomerUpdate customer={customer}></CustomerUpdate>
+                    </TableCell>
           </TableRow>
           <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
