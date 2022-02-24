@@ -2,7 +2,7 @@ import React from 'react';
 import  Button  from '@mui/material/Button';
 import Reply from '../Reply/Reply';
 
-const MessagesReply = () => {
+const MessagesReply = ({message}) => {
      const [open, setOpen] = React.useState(false);
      const handleOpen = () => setOpen(true);
      const handleClose = () => setOpen(false);
@@ -11,7 +11,7 @@ const MessagesReply = () => {
                <Button  size='small' variant="contained" onClick={handleOpen}>
                     Reply
                </Button> 
-               <Reply open={open} handleClose={handleClose}></Reply>
+               <Reply message={message} open={open} handleClose={handleClose}></Reply>
           </div>
      );
 };

@@ -85,7 +85,7 @@ const Message = ({messages}) => {
                                    {message.sender.phoneNo}
                               </Typography></TableCell>
                               <TableCell align="center">
-                                   <MessagesReply></MessagesReply>
+                                   <MessagesReply message={message}></MessagesReply>
                               </TableCell>
                          </TableRow>
                          ))}

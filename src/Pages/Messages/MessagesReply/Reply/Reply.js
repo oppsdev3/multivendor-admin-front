@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Modal from '@mui/material/Modal';
-import TextField from '@mui/material/TextField';
+
 
 
 
@@ -18,39 +18,33 @@ const style = {
      p: 4,
    };
 
-const Reply = ({ open, handleClose }) => {
+const Reply = ({ open, handleClose,message }) => {
      const token = localStorage.getItem('token')
-     
-     const [name, setName] = useState('') 
-     const [image,setImage] = useState('')
+     let id = message._id
+     const [textReply, setTextReply] = useState('') 
 
      const handleNameChange = (e) =>{
-          setName(e.target.value)
-          e.preventDefault()
-     }
-     const handleImageChange = (e) =>{
-          setImage(e.target.value)
+          setTextReply(e.target.value)
           e.preventDefault()
      }
      const handleSubmit = e => {
-          const category = {
-               name: name,
-               imgUrl:image
+          const replyMessage = {
+               reply : textReply,
           }
-          console.log(category)
-          // fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/allcategory`, {
-          //      method: 'POST',
-          //      headers: {
-          //           'content-type': 'application/json',
-          //           'Authorization': token
-          //      },
-          //      body: JSON.stringify(category),
-          //      })
-          //      .then(res => res.json())
-          //      .then(info => {
-          //           console.log(info);
-          //           handleClose();
-          //      });
+          console.log(replyMessage)
+          fetch(`https://multivendorapi.herokuapp.com/api/firebasemessage/${id}`, {
+               method: 'PATCH',
+               headers: {
+                    'content-type': 'application/json',
+                    'Authorization': token
+               },
+               body: JSON.stringify(replyMessage),
+               })
+               .then(res => res.json())
+               .then(info => {
+                    console.log(info);
+                    handleClose();
+               });
           e.preventDefault()
      }
      return (
@@ -66,14 +60,16 @@ const Reply = ({ open, handleClose }) => {
                          <Box> 
                               <form onSubmit={handleSubmit}>
                                    <Box sx={{textAlign:'center'}}>
-                                        <TextField 
+                                        {/* <TextField 
                                         sx={{mb:3,width:'75%'}}  
                                         required
                                         id="filled-required"
                                         label="reply"
                                         onChange={handleNameChange}
-                                        />
-                                        
+                                        /> */}
+                                        <textarea onChange={handleNameChange} rows="4" cols="40">
+
+                                        </textarea>
                                    </Box>
 
                                    <Box sx={{ textAlign:'center'}}>
