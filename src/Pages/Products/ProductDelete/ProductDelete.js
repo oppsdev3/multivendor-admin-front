@@ -18,8 +18,11 @@ const ProductDelete = ({product}) => {
                .then(res => res.json())
                .then(data => {
                     console.log(data)
+                    if(data){
+                         alert("Product deleted successfully")
+                    }
                })
-               e.preventDefault()
+               // e.preventDefault()
           }
 
    
