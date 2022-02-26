@@ -30,7 +30,8 @@ const CategoryModal = ({ open, handleClose }) => {
           e.preventDefault()
      }
      const handleImageChange = (e) =>{
-          setImage(e.target.value)
+          setImage(e.target.files[0])
+          console.log(e.target.files[0])
           e.preventDefault()
      }
      const handleSubmit = e => {
@@ -39,19 +40,19 @@ const CategoryModal = ({ open, handleClose }) => {
                imgUrl:image
           }
           console.log(category)
-          fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/allcategory`, {
-               method: 'POST',
-               headers: {
-                    'content-type': 'application/json',
-                    'Authorization': token
-               },
-               body: JSON.stringify(category),
-               })
-               .then(res => res.json())
-               .then(info => {
-                    console.log(info);
-                    handleClose();
-               });
+          // fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/allcategory`, {
+          //      method: 'POST',
+          //      headers: {
+          //           'content-type': 'application/json',
+          //           'Authorization': token
+          //      },
+          //      body: JSON.stringify(category),
+          //      })
+          //      .then(res => res.json())
+          //      .then(info => {
+          //           console.log(info);
+          //           handleClose();
+          //      });
           e.preventDefault()
      }
      return (
@@ -73,6 +74,7 @@ const CategoryModal = ({ open, handleClose }) => {
                                         id="filled-required"
                                         label="name"
                                         onChange={handleNameChange}
+                                        variant="filled"
                                         />
 
                                         <input 
@@ -85,7 +87,7 @@ const CategoryModal = ({ open, handleClose }) => {
                                         
                                    </Box>
 
-                                   <Box sx={{ textAlign:'center'}}>
+                                   <Box sx={{ textAlign:'center',mt:2}}>
                                         <input type="submit" />
                                    </Box>
                               </form>

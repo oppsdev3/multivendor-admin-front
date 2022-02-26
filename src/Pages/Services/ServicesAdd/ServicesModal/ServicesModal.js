@@ -27,7 +27,7 @@ const ServicesModal = ({ open, handleClose }) => {
           e.preventDefault()
      }
      const handleImageChange = (e) =>{
-          setImage(e.target.value)
+          setImage(e.target.files[0])
           e.preventDefault()
      }
      const handleSubmit = e => {
