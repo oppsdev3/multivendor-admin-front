@@ -30,7 +30,7 @@ const style = {
 
 const BannerModal = ({ open, handleClose }) => {
      const token = localStorage.getItem('token')
-     const [status, setStatus] = useState('EUR');
+     const [status, setStatus] = useState('');
      const [name, setName] = useState('') 
      const [image,setImage] = useState('')
      const [description,setDescription] = useState('')
@@ -44,7 +44,7 @@ const BannerModal = ({ open, handleClose }) => {
           e.preventDefault()
      }
      const handleImageChange = (e) =>{
-          setImage(e.target.value)
+          setImage(e.target.files[0].name)
           e.preventDefault()
      }
      const handleDescriptionChange = (e) =>{
@@ -52,9 +52,7 @@ const BannerModal = ({ open, handleClose }) => {
           e.preventDefault()
      }
 
-     const handleOnBlur = e =>{
-
-     }
+    
 
      const handleSubmit = e => {
           const bannerInfo = {
@@ -115,7 +113,7 @@ const BannerModal = ({ open, handleClose }) => {
                                              label="Status"
                                              sx={{mb:3,width:'75%'}}
                                              name="status"
-                                             onBlur={handleOnBlur}
+                                             
                                              value={status}
                                              onChange={handleChange}
                                              size="small"

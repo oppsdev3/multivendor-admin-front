@@ -30,7 +30,7 @@ const CategoryModal = ({ open, handleClose }) => {
           e.preventDefault()
      }
      const handleImageChange = (e) =>{
-          setImage(e.target.files[0])
+          setImage(e.target.files[0].name)
           console.log(e.target.files[0])
           e.preventDefault()
      }
@@ -40,19 +40,19 @@ const CategoryModal = ({ open, handleClose }) => {
                imgUrl:image
           }
           console.log(category)
-          // fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/allcategory`, {
-          //      method: 'POST',
-          //      headers: {
-          //           'content-type': 'application/json',
-          //           'Authorization': token
-          //      },
-          //      body: JSON.stringify(category),
-          //      })
-          //      .then(res => res.json())
-          //      .then(info => {
-          //           console.log(info);
-          //           handleClose();
-          //      });
+          fetch(`https://multivendorapi.herokuapp.com//api/admin/adminroute/allcategory`, {
+               method: 'POST',
+               headers: {
+                    'content-type': 'application/json',
+                    'Authorization': token
+               },
+               body: JSON.stringify(category),
+               })
+               .then(res => res.json())
+               .then(info => {
+                    console.log(info);
+                    handleClose();
+               });
           e.preventDefault()
      }
      return (
