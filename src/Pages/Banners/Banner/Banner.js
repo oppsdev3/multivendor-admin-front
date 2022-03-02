@@ -34,8 +34,8 @@ function Row(props) {
           </TableCell>
           <TableCell align="center">
           <Typography
-                    sx={{  fontWeight:700 }}
-                    variant="body1"
+                    sx={{  fontWeight:500 }}
+                    variant="body2"
                     gutterBottom
                     component="div"
                >
@@ -43,8 +43,8 @@ function Row(props) {
                </Typography></TableCell>
           <TableCell align="center">
           <Typography
-                    sx={{ fontWeight:700 }}
-                    variant="body1"
+                    sx={{ fontWeight:500 }}
+                    variant="body2"
                     gutterBottom
                     component="div"
                >
@@ -52,8 +52,8 @@ function Row(props) {
                </Typography></TableCell>
           <TableCell align="center">
           <Typography
-                    sx={{ fontWeight:700 }}
-                    variant="body1"
+                    sx={{ fontWeight:500 }}
+                    variant="body2"
                     gutterBottom
                     component="div"
                >
@@ -85,35 +85,35 @@ const Banner = ({banners}) => {
      
      return (
           <>
-               <TableContainer sx={{mt:4}} component={Paper}>
+               <TableContainer sx={{mt:1}} component={Paper}>
                     <Table aria-label="collapsible table">
                     <TableHead>
                          <TableRow>
                          <TableCell />
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: 'tomato', fontWeight:700 }}
+                                   sx={{ color: 'tomato', fontWeight:600 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                   Banner Title
+                                   BANNER TITLE
                               </Typography></TableCell>
                          <TableCell align="center"><Typography
-                                   sx={{ color: 'tomato', fontWeight:700 }}
+                                   sx={{ color: 'tomato', fontWeight:600 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                   Banner Id
+                                   BANNER ID
                               </Typography></TableCell>
                          <TableCell align="center"><Typography
-                                   sx={{ color: 'tomato', fontWeight:700 }}
+                                   sx={{ color: 'tomato', fontWeight:600 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                   Banner Description
+                                   BANNER DESCRIPTION
                               </Typography></TableCell>
                          
                          </TableRow>

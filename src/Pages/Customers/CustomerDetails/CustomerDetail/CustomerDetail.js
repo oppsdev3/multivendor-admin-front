@@ -8,7 +8,8 @@ const CustomerDetail = ({customers}) => {
           <>
                <Grid
                     sx={{
-                         height: 150,
+                         height: 'auto',
+                         mb:2
                     }}
                     item
                     xs={12}
@@ -16,18 +17,30 @@ const CustomerDetail = ({customers}) => {
                     md={4}
                     lg={4}
                     >
-                    <Paper sx={{ py: 2, textAlign: 'center',  }} elevation={3}>
-                         {/* <img src={customers} alt="" /> */}
+                    <Paper sx={{ py: 2, textAlign: 'center', backgroundColor:"#FFFFE0",  }} elevation={4}>
+                         <img src={customers.profileImg} alt={customers.name} style={{width:"50%",borderRadius:"50%"}}/>
                          
                          
                          <Typography
-                              sx={{ fontWeight:700 }}
+                              sx={{ fontWeight:500, color:"#6B8E23",mt:2  }}
+                              variant="h6"
+                              gutterBottom
+                              component="div"
+                              
+                         >
+                             Phone: {customers.phoneNo} 
+                         </Typography>
+                         {
+                              customers.email && <Typography
+                              sx={{ fontWeight:500,color:"#6B8E23" }}
                               variant="h6"
                               gutterBottom
                               component="div"
                          >
-                             PHONE - {customers.phoneNo}
+                             email: {customers.email}
                          </Typography>
+                         }
+                        
                     </Paper>
                </Grid>     
           </>

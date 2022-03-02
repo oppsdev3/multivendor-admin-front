@@ -17,11 +17,11 @@ const BannerDetails = ({banner}) => {
                     md={4}
                     lg={4}
                     >
-                    <Paper sx={{ py: 1, textAlign: 'center' }} elevation={5}>
+                    <Paper sx={{ py: 1, textAlign: 'center',backgroundColor:"#FFFFE0", }} elevation={4}>
                          <img src={banner.imgUrl} style={{width:"100%"}} alt="" />
                          <Typography
-                              sx={{ color: 'info.main' }}
-                              variant="body1"
+                              sx={{ fontWeight:500,color:"#6B8E23",mt:1 }}
+                              variant="h6"
                               gutterBottom
                               component="div"
                          >

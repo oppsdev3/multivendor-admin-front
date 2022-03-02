@@ -34,8 +34,8 @@ function Row(props) {
           </TableCell>
           <TableCell align="center">
           <Typography
-                    sx={{  fontWeight:700 }}
-                    variant="body1"
+                    sx={{  fontWeight:500 }}
+                    variant="body2"
                     gutterBottom
                     component="div"
                >
@@ -43,8 +43,8 @@ function Row(props) {
                </Typography></TableCell>
           <TableCell align="center">
           <Typography
-                    sx={{ fontWeight:700 }}
-                    variant="body1"
+                    sx={{ fontWeight:500 }}
+                    variant="body2"
                     gutterBottom
                     component="div"
                >
@@ -78,46 +78,37 @@ const Category = ({categories}) => {
      console.log(categories)
      return (
           <>
-              <TableContainer sx={{mt:4}} component={Paper}>
+              <TableContainer sx={{mt:1}} component={Paper}>
                     <Table aria-label="collapsible table">
                     <TableHead>
                          <TableRow>
                          <TableCell />
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: 'tomato', fontWeight:700 }}
+                                   sx={{ color: 'tomato', fontWeight:600 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                   Category Title
+                                   CATEGORY TITLE
                               </Typography></TableCell>
                          <TableCell align="center"><Typography
-                                   sx={{ color: 'tomato', fontWeight:700 }}
+                                   sx={{ color: 'tomato', fontWeight:600 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                   Category Id
+                                   CATEGORY ID
                               </Typography></TableCell>
                          <TableCell align="center"><Typography
-                                   sx={{ color: 'tomato', fontWeight:700 }}
+                                   sx={{ color: 'tomato', fontWeight:600 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                   Total Product
+                                   TOTAL CATEGORY
                               </Typography></TableCell>
-                         <TableCell align="center">
-                              <Typography
-                                   sx={{ color: 'tomato', fontWeight:700 }}
-                                   variant="h6"
-                                   gutterBottom
-                                   component="div"
-                              >
-                                   Operation
-                              </Typography>
-                         </TableCell>
+                        
                          
                          </TableRow>
                     </TableHead>

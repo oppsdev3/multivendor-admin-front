@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
+import axios from 'axios';
 
 
 
@@ -23,24 +24,31 @@ const CategoryModal = ({ open, handleClose }) => {
      const token = localStorage.getItem('token')
      
      const [name, setName] = useState('') 
-     const [image,setImage] = useState('')
+     const [imgUrl,setImageUrl] = useState('')
 
      const handleNameChange = (e) =>{
           setName(e.target.value)
           e.preventDefault()
      }
-     const handleImageChange = (e) =>{
-          setImage(e.target.files[0].name)
-          console.log(e.target.files[0])
+     const handleImageChange = async(e) =>{
+          const file = e.target.files[0]
+          console.log(file)
+          const formData = new FormData()
+          formData.append("file",file)
+          const res = await axios.post('https://multivendorapi.herokuapp.com/api/upload', formData, {
+               headers: {'content-type': 'multipart/form-data'}
+           })
+           console.log(res.data.url)
+           setImageUrl(res.data.url)
           e.preventDefault()
      }
      const handleSubmit = e => {
           const category = {
                name: name,
-               imgUrl:image
+               imgUrl
           }
           console.log(category)
-          fetch(`https://multivendorapi.herokuapp.com//api/admin/adminroute/allcategory`, {
+          fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/allcategory`, {
                method: 'POST',
                headers: {
                     'content-type': 'application/json',
@@ -78,11 +86,11 @@ const CategoryModal = ({ open, handleClose }) => {
                                         />
 
                                         <input 
-                                        required 
-                                        type="file"
-                                        name ="upload"
-                                        onChange={handleImageChange}
-                                        />
+                                             required 
+                                             type="file"
+                                             name ="file"
+                                             onChange={e => handleImageChange(e)}
+                                             />
 
                                         
                                    </Box>

@@ -9,6 +9,7 @@ const ProductDetail = ({products}) => {
                <Grid
                     sx={{
                          height: 'auto',
+                         mb:2
                     }}
                     item
                     xs={12}
@@ -16,38 +17,22 @@ const ProductDetail = ({products}) => {
                     md={4}
                     lg={4}
                     >
-                    <Paper sx={{ py: 1, textAlign: 'center' }} elevation={5}>
-                         <img src={products.images} style={{width:"100%"}} alt="" />
+                    <Paper sx={{ py: 1, textAlign: 'center',backgroundColor:"#FFFFE0", }} elevation={4}>
+                         <img src={products.images} style={{width:"100%"}}  alt="" />
                          <Typography
-                              sx={{ color: 'info.main' }}
-                              variant="body1"
+                               sx={{ fontWeight:500,color:"#6B8E23" }}
+                              variant="h6"
                               gutterBottom
                               component="div"
                          >
                              Title: {products.title}
                          </Typography>
+
                          
-                         <Typography
-                              sx={{ color: 'red' }}
-                              variant="body1"
-                              gutterBottom
-                              component="div"
-                         >
-                              {products.availstatus}
-                         </Typography>
 
                          <Typography
-                              sx={{ color: 'red' }}
-                              variant="body1"
-                              gutterBottom
-                              component="div"
-                         >
-                              {products.content}
-                         </Typography>
-
-                         <Typography
-                              sx={{ color: 'red' }}
-                              variant="body1"
+                               sx={{ fontWeight:500,color:"#6B8E23" }}
+                              variant="h6"
                               gutterBottom
                               component="div"
                          >
@@ -55,12 +40,12 @@ const ProductDetail = ({products}) => {
                          </Typography>
                          
                          <Typography
-                              sx={{ color: 'red' }}
-                              variant="body1"
+                              sx={{ fontWeight:500,color:"#6B8E23" }}
+                              variant="h6"
                               gutterBottom
                               component="div"
                          >
-                             Sold: {products.sold}
+                             Sold Item: {products.sold}
                          </Typography>
                     </Paper>
                </Grid>    

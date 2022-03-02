@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
+import axios from 'axios';
 
 
 const style = {
@@ -20,7 +21,7 @@ const style = {
 const EditModal = ({ open, handleClose,banner }) => {
      const token = localStorage.getItem('token')
      const [name, setName] = useState('') 
-     const [image,setImage] = useState('')
+     const [imgUrl,setImageUrl] = useState('')
      let id = banner._id
      console.log(id)
 
@@ -28,14 +29,22 @@ const EditModal = ({ open, handleClose,banner }) => {
           setName(e.target.value)
           e.preventDefault()
      }
-     const handleImageChange = (e) =>{
-          setImage(e.target.value)
+     const handleImageChange = async(e) =>{
+          const file = e.target.files[0]
+          console.log(file)
+          const formData = new FormData()
+          formData.append("file",file)
+          const res = await axios.post('https://multivendorapi.herokuapp.com/api/upload', formData, {
+               headers: {'content-type': 'multipart/form-data'}
+           })
+           console.log(res.data.url)
+           setImageUrl(res.data.url)
           e.preventDefault()
      }
      const handleSubmit = e => {
           const bannerInfo = {
                title: name,
-               imgUrl:image,
+               imgUrl
           }
           console.log(bannerInfo)
           fetch(`https://multivendorapi.herokuapp.com/api/banner/${id}`, {
@@ -74,12 +83,12 @@ const EditModal = ({ open, handleClose,banner }) => {
                                         onChange={handleNameChange}
                                         variant="filled"
                                         />
-                                        <input 
-                                        required 
-                                        type="file"
-                                        name ="upload"
-                                        onChange={handleImageChange}
-                                        />     
+                                          <input 
+                                             required 
+                                             type="file"
+                                             name ="file"
+                                             onChange={e => handleImageChange(e)}
+                                             />
                                    </Box>
 
                                    <Box sx={{mt:2, textAlign:'center'}}>

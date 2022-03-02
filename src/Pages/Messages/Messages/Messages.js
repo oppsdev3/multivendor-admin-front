@@ -30,7 +30,7 @@ const Messages = () => {
          return <CircularProgress />
      }
      return (
-          <Box sx={{mt:2}}>
+          <Box>
                <Message messages={messages}></Message>
           </Box>
      );

@@ -8,7 +8,7 @@ const MessagesReply = ({message}) => {
      const handleClose = () => setOpen(false);
      return (
           <div>
-               <Button  size='small' variant="contained" onClick={handleOpen}>
+               <Button   size='small' variant="contained" onClick={handleOpen}>
                     Reply
                </Button> 
                <Reply message={message} open={open} handleClose={handleClose}></Reply>

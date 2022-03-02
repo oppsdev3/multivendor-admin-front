@@ -2,6 +2,7 @@ import React from 'react';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import VendorProduct from '../VendorProduct/VendorProduct';
+import { Box } from '@mui/material';
 
 
 const VendorProducts = ({vendor}) => {
@@ -10,6 +11,7 @@ const VendorProducts = ({vendor}) => {
      return (
           <>
                <Grid container spacing={2}>
+               
                        
                     {
                          products.map(product => <VendorProduct key={product._id} product={product}></VendorProduct>)

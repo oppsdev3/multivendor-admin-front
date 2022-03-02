@@ -18,33 +18,33 @@ const Message = ({messages}) => {
                          <TableRow>
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: 'tomato', fontWeight:700 }}
+                                   sx={{ color: 'tomato', fontWeight:600 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                  Text
+                                  TEXT
                               </Typography>
                          </TableCell>
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: 'tomato', fontWeight:700 }}
+                                   sx={{ color: 'tomato', fontWeight:600 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
                                   
-                                   Receiver Phone
+                                   RECEIVER PHONE
                               </Typography>
                          </TableCell>
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: 'tomato', fontWeight:700 }}
+                                   sx={{ color: 'tomato', fontWeight:600 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                 Sender Phone
+                                 SENDER PHONE
                               </Typography>
                          </TableCell>
                          
@@ -58,8 +58,8 @@ const Message = ({messages}) => {
                          >
                          <TableCell align="center">
                               <Typography
-                                   sx={{   fontWeight:700 }}
-                                   variant="body1"
+                                   sx={{   fontWeight:500 }}
+                                   variant="body2"
                                    gutterBottom
                                    component="div"
                               >
@@ -68,8 +68,8 @@ const Message = ({messages}) => {
                          </TableCell>
                          <TableCell align="center">
                               <Typography
-                                   sx={{  fontWeight:700 }}
-                                   variant="body1"
+                                   sx={{  fontWeight:500 }}
+                                   variant="body2"
                                    gutterBottom
                                    component="div"
                               >
@@ -77,8 +77,8 @@ const Message = ({messages}) => {
                               </Typography>
                          </TableCell>
                          <TableCell align="center"><Typography
-                                   sx={{ fontWeight:700 }}
-                                   variant="body1"
+                                   sx={{ fontWeight:500 }}
+                                   variant="body2"
                                    gutterBottom
                                    component="div"
                               >

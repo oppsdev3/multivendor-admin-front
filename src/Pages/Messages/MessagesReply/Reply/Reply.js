@@ -60,15 +60,7 @@ const Reply = ({ open, handleClose,message }) => {
                          <Box> 
                               <form onSubmit={handleSubmit}>
                                    <Box sx={{textAlign:'center'}}>
-                                        {/* <TextField 
-                                        sx={{mb:3,width:'75%'}}  
-                                        required
-                                        id="filled-required"
-                                        label="reply"
-                                        onChange={handleNameChange}
-                                        /> */}
                                         <textarea onChange={handleNameChange} rows="4" cols="40">
-
                                         </textarea>
                                    </Box>
 

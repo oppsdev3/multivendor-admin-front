@@ -36,8 +36,8 @@ function Row(props) {
           </TableCell>
           <TableCell align="center">
                <Typography
-                    sx={{  fontWeight:700 }}
-                    variant="body1"
+                    sx={{  fontWeight:500 }}
+                    variant="body2"
                     gutterBottom
                     component="div"
                >
@@ -48,8 +48,8 @@ function Row(props) {
                {
                     customer.status == "active" ? 
                     <Typography
-                         sx={{  fontWeight:700 }}
-                         variant="body1"
+                         sx={{  fontWeight:500 }}
+                         variant="body2"
                          gutterBottom
                          component="div"
                     >
@@ -57,8 +57,8 @@ function Row(props) {
                     </Typography>
                     :
                     <Typography
-                         sx={{ color: 'red', fontWeight:700 }}
-                         variant="body1"
+                         sx={{ color: 'red', fontWeight:500 }}
+                         variant="body2"
                          gutterBottom
                          component="div"
                     >
@@ -68,8 +68,8 @@ function Row(props) {
                
           </TableCell>
           <TableCell align="center"><Typography
-                         sx={{  fontWeight:700 }}
-                         variant="body1"
+                         sx={{  fontWeight:500 }}
+                         variant="body2"
                          gutterBottom
                          component="div"
                     >
@@ -99,39 +99,39 @@ const Customer = ({customers}) => {
      console.log(customers)
      return (
           <>
-               <TableContainer sx={{mt:2}} component={Paper}>
+               <TableContainer component={Paper}>
                     <Table aria-label="collapsible table">
                     <TableHead>
                          <TableRow>
                          <TableCell />
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: 'tomato', fontWeight:700 }}
-                                   variant="h5"
+                                   sx={{ color: 'tomato', fontWeight:600 }}
+                                   variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                              Customer Phone
+                              CUSTOMER PHONE
                               </Typography>
                          </TableCell>
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: 'tomato', fontWeight:700 }}
-                                   variant="h5"
+                                   sx={{ color: 'tomato', fontWeight:600 }}
+                                   variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                   Customer Status
+                                   CUSTOMER STATUS
                               </Typography>
                               </TableCell>
                          <TableCell align="center">
                               <Typography
-                                   sx={{ color: 'tomato', fontWeight:700 }}
-                                   variant="h5"
+                                   sx={{ color: 'tomato', fontWeight:600 }}
+                                   variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                   Customer ID
+                                   CUSTOMER ID
                               </Typography>
                               
                          </TableCell>

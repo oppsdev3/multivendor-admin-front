@@ -17,6 +17,11 @@ const CategoryDelete = ({category}) => {
                .then(res => res.json())
                .then(data => {
                     console.log(data)
+                    if(data.msg =="Deleted your this customer"){
+                         alert ("Category deleted successfully")
+                    }else{
+                         alert("Category not deleted")
+                    }
                })
                e.preventDefault()
      }

@@ -37,8 +37,8 @@ function Row(props) {
           </TableCell>
           <TableCell align="center">
           <Typography
-                    sx={{  fontWeight:700 }}
-                    variant="body1"
+                    sx={{  fontWeight:500 }}
+                    variant="body2"
                     gutterBottom
                     component="div"
                >
@@ -47,8 +47,8 @@ function Row(props) {
          </TableCell>
           <TableCell align="center">
           <Typography
-                    sx={{  fontWeight:700 }}
-                    variant="body1"
+                    sx={{  fontWeight:500 }}
+                    variant="body2"
                     gutterBottom
                     component="div"
                >
@@ -57,8 +57,8 @@ function Row(props) {
           </TableCell>
           <TableCell align="center">
           <Typography
-                    sx={{  fontWeight:700 }}
-                    variant="body1"
+                    sx={{  fontWeight:500 }}
+                    variant="body2"
                     gutterBottom
                     component="div"
                >
@@ -67,8 +67,8 @@ function Row(props) {
           
           <TableCell align="center">
           <Typography
-                    sx={{  fontWeight:700 }}
-                    variant="body1"
+                    sx={{  fontWeight:500 }}
+                    variant="body2"
                     gutterBottom
                     component="div"
                >
@@ -76,8 +76,8 @@ function Row(props) {
                </Typography></TableCell>
           <TableCell align="center">
           <Typography
-                    sx={{  fontWeight:700 }}
-                    variant="body1"
+                    sx={{  fontWeight:500 }}
+                    variant="body2"
                     gutterBottom
                     component="div"
                >
@@ -110,19 +110,19 @@ function Row(props) {
 const VendorView = ({vendors}) => {
      return (
           <>
-               <TableContainer sx={{mt:2, ml:2}} component={Paper}>
+               <TableContainer sx={{mt:1, ml:2}} component={Paper}>
                     <Table aria-label="collapsible table">
                     <TableHead>
                          <TableRow>
                          <TableCell />
                          <TableCell align="center"> 
                               <Typography
-                                   sx={{ color: 'tomato', fontWeight:700 }}
+                                   sx={{ color: 'tomato', fontWeight:600 }}
                                    variant="h6"
                                    gutterBottom
                                    component="div"
                               >
-                                   Vendor Name
+                                   VENDOR NAME
                               </Typography>
                               </TableCell>
                          <TableCell align="center"> <Typography
@@ -131,7 +131,7 @@ const VendorView = ({vendors}) => {
                                    gutterBottom
                                    component="div"
                               >
-                                   Vendor Email
+                                   VENDOR EMAIL
                               </Typography></TableCell>
                          <TableCell align="center"> <Typography
                                    sx={{ color: 'tomato', fontWeight:700 }}
@@ -139,7 +139,7 @@ const VendorView = ({vendors}) => {
                                    gutterBottom
                                    component="div"
                               >
-                                   Vendor Phone
+                                   VENDOR PHONE
                               </Typography></TableCell>
                         
                          <TableCell align="center"> <Typography
@@ -148,7 +148,7 @@ const VendorView = ({vendors}) => {
                                    gutterBottom
                                    component="div"
                               >
-                                   Vendor Address
+                                   VENDOR ADDRESS
                               </Typography></TableCell>
                          <TableCell align="center"> <Typography
                                    sx={{ color: 'tomato', fontWeight:700 }}
@@ -156,7 +156,7 @@ const VendorView = ({vendors}) => {
                                    gutterBottom
                                    component="div"
                               >
-                                   Vendor Status
+                                   VENDOR STATUS
                               </Typography></TableCell>
                          </TableRow>
                     </TableHead>

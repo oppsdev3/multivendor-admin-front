@@ -9,6 +9,7 @@ const VendorProfileView = ({vendors}) => {
               <Grid
                     sx={{
                          height: 'auto',
+                         mb:2
                     }}
                     item
                     xs={12}
@@ -16,11 +17,20 @@ const VendorProfileView = ({vendors}) => {
                     md={6}
                     lg={6}
                     >
-                    <Paper sx={{ py: 2, textAlign: 'center' }} elevation={3}>
-                         <img src={vendors.profileImg} style={{width:'25%',borderRadius: '50%'}} alt="" />
                          <Typography
-                              sx={{ color: 'info.main' }}
-                              variant="body1"
+                              sx={{ fontWeight:500,textAlign: 'center',mb:3, color:"#6B8E23",mt:2  }}
+                              variant="h4"
+                              gutterBottom
+                              component="div"
+                              
+                         >
+                             PROFILE 
+                         </Typography>
+                    <Paper sx={{ py: 2, textAlign: 'center',backgroundColor:"#FFFFE0", }} elevation={4}>
+                         <img src={vendors.profileImg} style={{width:'75%',borderRadius: '50%'}} alt="" />
+                         <Typography
+                              sx={{ fontWeight:500, color:"#6B8E23",mt:2  }}
+                              variant="h6"
                               gutterBottom
                               component="div"
                          >
@@ -28,29 +38,31 @@ const VendorProfileView = ({vendors}) => {
                          </Typography>
                          
                          <Typography
-                              sx={{ color: 'info.main' }}
-                              variant="body1"
+                              sx={{ fontWeight:500, color:"#6B8E23",mt:2  }}
+                              variant="h6"
                               gutterBottom
                               component="div"
                          >
-                              {vendors.phoneNo}
+                              Phone: {vendors.phoneNo}
                          </Typography>
-                         <Typography
-                         
-                         sx={{ color: 'info.main' }}
-                              variant="body1"
-                              gutterBottom
-                              component="div"
-                         >
-                             Address: {vendors.address}
-                         </Typography>
+                         {
+                              vendors.address &&
+                                   <Typography
+                                        sx={{ fontWeight:500, color:"#6B8E23",mt:2  }}
+                                        variant="h6"
+                                        gutterBottom
+                                        component="div"
+                                   >
+                                        Address: {vendors.address}
+                                   </Typography>
+                         }
 
                          {
                               vendors.active === true ?
 
                               <Typography
-                              sx={{ color: 'info.main' }}
-                              variant="body1"
+                              sx={{ fontWeight:500, color:"#6B8E23",mt:2  }}
+                              variant="h6"
                               gutterBottom
                               component="div"
                               >
@@ -58,12 +70,12 @@ const VendorProfileView = ({vendors}) => {
                               </Typography>
                               :
                               <Typography
-                              sx={{ color: 'info.main' }}
-                              variant="body1"
+                              sx={{ fontWeight:500, color:"#6B8E23",mt:2  }}
+                              variant="h6"
                               gutterBottom
                               component="div"
                               >
-                                   Statusp: Inactive
+                                   Status: Inactive
                               </Typography>
                          }
                          
