@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
+import axios from 'axios';
 
 const style = {
      position: 'absolute',
@@ -32,9 +33,9 @@ const BannerModal = ({ open, handleClose }) => {
      const token = localStorage.getItem('token')
      const [status, setStatus] = useState('');
      const [name, setName] = useState('') 
-     const [image,setImage] = useState('')
+     const [imgUrl,setImageUrl] = useState('')
      const [description,setDescription] = useState('')
-
+    
      const handleChange = e => {
           setStatus(e.target.value);
         };
@@ -43,8 +44,16 @@ const BannerModal = ({ open, handleClose }) => {
           setName(e.target.value)
           e.preventDefault()
      }
-     const handleImageChange = (e) =>{
-          setImage(e.target.files[0].name)
+     const handleImageChange = async e=>{
+          const file = e.target.files[0]
+          console.log(file)
+          const formData = new FormData()
+          formData.append("file",file)
+          const res = await axios.post('https://multivendorapi.herokuapp.com/api/upload', formData, {
+               headers: {'content-type': 'multipart/form-data'}
+           })
+           console.log(res.data.url)
+           setImageUrl(res.data.url)
           e.preventDefault()
      }
      const handleDescriptionChange = (e) =>{
@@ -57,7 +66,7 @@ const BannerModal = ({ open, handleClose }) => {
      const handleSubmit = e => {
           const bannerInfo = {
                title: name,
-               imgUrl:image,
+               imgUrl,
                description: description,
                displayStatus:Boolean(status)
           }
@@ -130,8 +139,8 @@ const BannerModal = ({ open, handleClose }) => {
                                              <input 
                                              required 
                                              type="file"
-                                             name ="upload"
-                                             onChange={handleImageChange}
+                                             name ="file"
+                                             onChange={e => handleImageChange(e)}
                                              />
 
                                         
@@ -150,3 +159,32 @@ const BannerModal = ({ open, handleClose }) => {
 };
 
 export default BannerModal;
+
+
+
+
+
+
+
+// fetch (`https://multivendorapi.herokuapp.com/api/upload`, {
+//                method: 'POST',
+//                headers: {
+//                     'content-type': 'multipart/form-data',
+//                },
+//                body: JSON.stringify(formData),
+//                })
+//                .then(res => res.json())
+//                .then(info => {
+//                     setImageUrl(info);
+//                     console.log(info)
+//                });
+
+
+
+
+
+
+
+
+
+
