@@ -30,24 +30,24 @@ const AdminPasswordForm = ({ open, handleClose }) => {
                password : passwordData
           }
           console.log(password)
-          // fetch('https://multivendorapex.herokuapp.com/api/admin/v1/updateadminpassword', {
-          //      method: 'PATCH',
-          //      headers: {
-          //      'content-type': 'application/json',
-          //      'Authorization': token
-          //      },
-          //      body: JSON.stringify(password),
+          fetch('https://multivendorapex.herokuapp.com/api/admin/v1/updateadminpassword', {
+               method: 'PATCH',
+               headers: {
+               'content-type': 'application/json',
+               'Authorization': token
+               },
+               body: JSON.stringify(password),
 
-          // })
-          // .then(res => res.json())
-          // .then(data => {
-          //      console.log(data)
-          //      handleClose()
-          // })
-          
+          })
+          .then(res => res.json())
+          .then(data => {
+               console.log(data)
+               handleClose()
+          })
+
           e.preventDefault()
      }
-     
+
      return (
           <div>
                <Modal
@@ -87,7 +87,7 @@ const AdminPasswordForm = ({ open, handleClose }) => {
                     </Box>
                     </Grid>
                </Box>
-               </Modal>    
+               </Modal>
           </div>
      );
 };
