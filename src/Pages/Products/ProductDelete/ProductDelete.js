@@ -6,7 +6,7 @@ const ProductDelete = ({product}) => {
      const token = localStorage.getItem('token')
      let id = product._id
           const handleClick = e =>{
-               fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/allproduct/${id}`, {
+               fetch(`https://multivendorapex.herokuapp.com/api/admin/adminroute/allproduct/${id}`, {
                method: 'DELETE',
                headers: {
                'content-type': 'application/json',

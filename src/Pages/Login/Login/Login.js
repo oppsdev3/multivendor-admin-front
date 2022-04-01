@@ -24,10 +24,10 @@ const Login = () => {
           console.log(newLoginData);
           setLoginData(newLoginData);
         };
-      
+
         const handleSubmit = e => {
           setLoading(true)
-          fetch('https://multivendorapi.herokuapp.com/api/admin/v1/adminlogin', {
+          fetch('https://multivendorapex.herokuapp.com/api/admin/v1/adminlogin', {
             method: 'POST',
             headers: {
               'content-type': 'application/json',
@@ -47,7 +47,7 @@ const Login = () => {
                     setError(info);
                     setLoading(false)
               }
-             
+
             });
           e.preventDefault();
         };
@@ -58,7 +58,7 @@ const Login = () => {
      return (
           <>
                <Container className="login-style">
-                    
+
                     <Grid container spacing={2}>
                          <Grid sx={{ width: '100%', mt: 10 }} item xs={12} md={6}>
                               <form onSubmit={handleSubmit}>
@@ -108,13 +108,13 @@ const Login = () => {
                                    <Alert severity="error">Invalid username or password</Alert>
                               }
                          </Grid>
-                         
-                                
-                         
+
+
+
                     </Grid>
-                    
-                   
-               </Container>  
+
+
+               </Container>
           </>
      );
 };

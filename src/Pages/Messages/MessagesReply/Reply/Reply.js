@@ -32,7 +32,7 @@ const Reply = ({ open, handleClose,message }) => {
                reply : textReply,
           }
           console.log(replyMessage)
-          fetch(`https://multivendorapi.herokuapp.com/api/firebasemessage/${id}`, {
+          fetch(`https://multivendorapex.herokuapp.com/api/firebasemessage/${id}`, {
                method: 'PATCH',
                headers: {
                     'content-type': 'application/json',

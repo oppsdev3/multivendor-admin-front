@@ -36,7 +36,7 @@ const OtpVerification = () => {
                }
                console.log(registerData)
                setLoading(true)   
-          fetch('https://multivendorapi.herokuapp.com/api/admin/register/verify', {
+          fetch('https://multivendorapex.herokuapp.com/api/admin/register/verify', {
             method: 'POST',
             headers: {
               'content-type': 'application/json',

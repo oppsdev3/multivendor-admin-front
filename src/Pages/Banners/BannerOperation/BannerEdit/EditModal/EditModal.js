@@ -34,7 +34,7 @@ const EditModal = ({ open, handleClose,banner }) => {
           console.log(file)
           const formData = new FormData()
           formData.append("file",file)
-          const res = await axios.post('https://multivendorapi.herokuapp.com/api/upload', formData, {
+          const res = await axios.post('https://multivendorapex.herokuapp.com/api/upload', formData, {
                headers: {'content-type': 'multipart/form-data'}
            })
            console.log(res.data.url)
@@ -47,7 +47,7 @@ const EditModal = ({ open, handleClose,banner }) => {
                imgUrl
           }
           console.log(bannerInfo)
-          fetch(`https://multivendorapi.herokuapp.com/api/banner/${id}`, {
+          fetch(`https://multivendorapex.herokuapp.com/api/banner/${id}`, {
                method: 'PATCH',
                headers: {
                     'content-type': 'application/json',

@@ -43,7 +43,7 @@ const ContactModal = ({ open, handleClose, contact }) => {
           }
           console.log(updatedData)
           setLoading(true)   
-          fetch(`https://multivendorapi.herokuapp.com//api/admin/adminroute/allvendorcontact/{id}`, {
+          fetch(`https://multivendorapex.herokuapp.com//api/admin/adminroute/allvendorcontact/{id}`, {
                method: 'PATCH',
                headers: {
                'content-type': 'application/json',

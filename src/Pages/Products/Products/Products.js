@@ -8,7 +8,7 @@ const Products = () => {
      const [loading,setLoading] = useState(false)
      useEffect(()=>{
           setLoading(true)
-          fetch('https://multivendorapi.herokuapp.com/api/products')
+          fetch('https://multivendorapex.herokuapp.com/api/products')
           .then(res => res.json())
           .then(data => {
                console.log(data.products)

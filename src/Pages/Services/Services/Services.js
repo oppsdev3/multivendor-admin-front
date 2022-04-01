@@ -9,7 +9,7 @@ const Services = () => {
      const token = localStorage.getItem('token')
      useEffect(()=>{
           setLoading(true)
-          fetch('https://multivendorapi.herokuapp.com/api/admin/adminroute/allservice', {
+          fetch('https://multivendorapex.herokuapp.com/api/admin/adminroute/allservice', {
                method: 'GET',
                headers: {
                'content-type': 'application/json',

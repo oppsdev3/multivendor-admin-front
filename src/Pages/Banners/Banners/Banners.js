@@ -9,7 +9,7 @@ const Banners = () => {
      const token = localStorage.getItem('token')
      useEffect(()=>{
           setLoading(true)
-          fetch('https://multivendorapi.herokuapp.com/api/banner', {
+          fetch('https://multivendorapex.herokuapp.com/api/banner', {
                method: 'GET',
                headers: {
                'content-type': 'application/json',

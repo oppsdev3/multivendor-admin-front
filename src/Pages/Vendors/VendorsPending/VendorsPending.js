@@ -48,7 +48,7 @@ const VendorsPending = ({ open, handleClose,vendor }) => {
           }
           console.log(updatedData)
           setLoading(true)   
-          fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/allvendor/${id}`, {
+          fetch(`https://multivendorapex.herokuapp.com/api/admin/adminroute/allvendor/${id}`, {
                method: 'PATCH',
                headers: {
                'content-type': 'application/json',

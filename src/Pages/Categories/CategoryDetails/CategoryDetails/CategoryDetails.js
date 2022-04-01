@@ -10,7 +10,7 @@ const CategoryDetails = ({category}) => {
      let id = category._id
      useEffect(()=>{
           setLoading(true)
-          fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/allcategory/${id}`, {
+          fetch(`https://multivendorapex.herokuapp.com/api/admin/adminroute/allcategory/${id}`, {
                method: 'GET',
                headers: {
                'content-type': 'application/json',

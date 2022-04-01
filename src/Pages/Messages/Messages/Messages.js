@@ -9,7 +9,7 @@ const Messages = () => {
      const token = localStorage.getItem('token')
      useEffect(()=>{
           setLoading(true)
-          fetch('https://multivendorapi.herokuapp.com/api/firebasemessage', {
+          fetch('https://multivendorapex.herokuapp.com/api/firebasemessage', {
                method: 'GET',
                headers: {
                'content-type': 'application/json',

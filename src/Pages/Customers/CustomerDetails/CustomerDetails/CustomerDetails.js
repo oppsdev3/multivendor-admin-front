@@ -11,7 +11,7 @@ const CustomerDetails = ({customer}) => {
      const [loading,setLoading] = useState(false)
      useEffect(()=>{
           setLoading(true)
-          fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/allCustomer/${id}`, {
+          fetch(`https://multivendorapex.herokuapp.com/api/admin/adminroute/allCustomer/${id}`, {
                method: 'GET',
                headers: {
                'content-type': 'application/json',

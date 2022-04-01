@@ -42,7 +42,7 @@ const CustomerModal = ({ open, handleClose, customer }) => {
           }
           console.log(updatedData)
           
-          fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/allcustomer/{id}`, {
+          fetch(`https://multivendorapex.herokuapp.com/api/admin/adminroute/allcustomer/{id}`, {
                method: 'PATCH',
                headers: {
                'content-type': 'application/json',

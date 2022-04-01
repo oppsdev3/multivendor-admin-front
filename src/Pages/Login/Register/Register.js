@@ -27,7 +27,7 @@ const Register = () => {
       
         const handleSubmit = e => {
           setLoading(true)
-          fetch('https://multivendorapi.herokuapp.com/api/admin/register', {
+          fetch('https://multivendorapex.herokuapp.com/api/admin/register', {
                method: 'POST',
                headers: {
                'content-type': 'application/json',

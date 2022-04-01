@@ -11,7 +11,7 @@ const ServiceDetails = ({service}) => {
           let id = service._id
           useEffect(()=>{
                setLoading(true)
-               fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/allservice/${id}`, {
+               fetch(`https://multivendorapex.herokuapp.com/api/admin/adminroute/allservice/${id}`, {
                     method: 'GET',
                     headers: {
                     'content-type': 'application/json',

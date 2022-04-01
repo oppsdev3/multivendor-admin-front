@@ -32,7 +32,7 @@ const ServicesModal = ({ open, handleClose }) => {
           console.log(file)
           const formData = new FormData()
           formData.append("file",file)
-          const res = await axios.post('https://multivendorapi.herokuapp.com/api/upload', formData, {
+          const res = await axios.post('https://multivendorapex.herokuapp.com/api/upload', formData, {
                headers: {'content-type': 'multipart/form-data'}
            })
            console.log(res.data.url)
@@ -45,7 +45,7 @@ const ServicesModal = ({ open, handleClose }) => {
                imgUrl
           }
           console.log(category)
-          fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/allservice`, {
+          fetch(`https://multivendorapex.herokuapp.com/api/admin/adminroute/allservice`, {
                method: 'POST',
                headers: {
                     'content-type': 'application/json',

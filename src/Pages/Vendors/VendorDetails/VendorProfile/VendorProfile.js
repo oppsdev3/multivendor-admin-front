@@ -11,7 +11,7 @@ const VendorProfile = ({vendor}) => {
      const [loading,setLoading] = useState(false)
      useEffect(()=>{
           setLoading(true)
-          fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/allvendor/${id}`, {
+          fetch(`https://multivendorapex.herokuapp.com/api/admin/adminroute/allvendor/${id}`, {
                method: 'GET',
                headers: {
                'content-type': 'application/json',

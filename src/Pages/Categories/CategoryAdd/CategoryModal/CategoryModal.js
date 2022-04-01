@@ -35,7 +35,7 @@ const CategoryModal = ({ open, handleClose }) => {
           console.log(file)
           const formData = new FormData()
           formData.append("file",file)
-          const res = await axios.post('https://multivendorapi.herokuapp.com/api/upload', formData, {
+          const res = await axios.post('https://multivendorapex.herokuapp.com/api/upload', formData, {
                headers: {'content-type': 'multipart/form-data'}
            })
            console.log(res.data.url)
@@ -48,7 +48,7 @@ const CategoryModal = ({ open, handleClose }) => {
                imgUrl
           }
           console.log(category)
-          fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/allcategory`, {
+          fetch(`https://multivendorapex.herokuapp.com/api/admin/adminroute/allcategory`, {
                method: 'POST',
                headers: {
                     'content-type': 'application/json',

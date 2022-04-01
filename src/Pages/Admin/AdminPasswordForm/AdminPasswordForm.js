@@ -30,7 +30,7 @@ const AdminPasswordForm = ({ open, handleClose }) => {
                password : passwordData
           }
           console.log(password)
-          // fetch('https://multivendorapi.herokuapp.com/api/admin/v1/updateadminpassword', {
+          // fetch('https://multivendorapex.herokuapp.com/api/admin/v1/updateadminpassword', {
           //      method: 'PATCH',
           //      headers: {
           //      'content-type': 'application/json',

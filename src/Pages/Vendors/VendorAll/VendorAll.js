@@ -9,7 +9,7 @@ const VendorAll = () => {
      const token = localStorage.getItem('token')
      useEffect(()=>{
           setLoading(true)
-          fetch('https://multivendorapi.herokuapp.com/api/admin/adminroute/allvendor', {
+          fetch('https://multivendorapex.herokuapp.com/api/admin/adminroute/allvendor', {
                method: 'GET',
                headers: {
                'content-type': 'application/json',

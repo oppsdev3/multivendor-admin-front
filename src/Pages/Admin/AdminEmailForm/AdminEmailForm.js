@@ -30,7 +30,7 @@ const AdminEmailForm = ({ open, handleClose }) => {
                email : emailData
           }
           console.log(email)
-          fetch('https://multivendorapi.herokuapp.com/api/admin/v1/updateadminemail', {
+          fetch('https://multivendorapex.herokuapp.com/api/admin/v1/updateadminemail', {
                method: 'PATCH',
                headers: {
                'content-type': 'application/json',

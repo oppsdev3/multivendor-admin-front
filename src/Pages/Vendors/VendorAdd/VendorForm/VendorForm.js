@@ -25,7 +25,7 @@ const VendorForm = ({ open, handleClose }) => {
      const onSubmit = data => {
           
           console.log(data)
-          fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/allvendor`, {
+          fetch(`https://multivendorapex.herokuapp.com/api/admin/adminroute/allvendor`, {
                method: 'POST',
                headers: {
                     'content-type': 'application/json',

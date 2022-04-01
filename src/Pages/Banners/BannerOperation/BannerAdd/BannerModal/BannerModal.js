@@ -49,7 +49,7 @@ const BannerModal = ({ open, handleClose }) => {
           console.log(file)
           const formData = new FormData()
           formData.append("file",file)
-          const res = await axios.post('https://multivendorapi.herokuapp.com/api/upload', formData, {
+          const res = await axios.post('https://multivendorapex.herokuapp.com/api/upload', formData, {
                headers: {'content-type': 'multipart/form-data'}
            })
            console.log(res.data.url)
@@ -71,7 +71,7 @@ const BannerModal = ({ open, handleClose }) => {
                displayStatus:Boolean(status)
           }
           console.log(bannerInfo)
-          fetch(`https://multivendorapi.herokuapp.com/api/banner`, {
+          fetch(`https://multivendorapex.herokuapp.com/api/banner`, {
                method: 'POST',
                headers: {
                     'content-type': 'application/json',
@@ -166,7 +166,7 @@ export default BannerModal;
 
 
 
-// fetch (`https://multivendorapi.herokuapp.com/api/upload`, {
+// fetch (`https://multivendorapex.herokuapp.com/api/upload`, {
 //                method: 'POST',
 //                headers: {
 //                     'content-type': 'multipart/form-data',

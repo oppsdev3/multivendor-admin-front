@@ -7,7 +7,7 @@ const ContactDetails = ({contact}) => {
      const [contacts,setContacts] = useState([])
 
      useEffect(()=>{
-          fetch(`https://multivendorapi.herokuapp.com//api/admin/adminroute/allvendorcontact/${id}`)
+          fetch(`https://multivendorapex.herokuapp.com//api/admin/adminroute/allvendorcontact/${id}`)
           .then(res => res.json())
           .then(data =>{
                console.log(data)

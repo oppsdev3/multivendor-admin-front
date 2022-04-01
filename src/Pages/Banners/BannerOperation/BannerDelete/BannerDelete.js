@@ -7,7 +7,7 @@ const BannerDelete = ({banner}) => {
      let id = banner._id
      console.log(id)
      const handleClick = e =>{
-               fetch(`https://multivendorapi.herokuapp.com/api/banner/${id}`, {
+               fetch(`https://multivendorapex.herokuapp.com/api/banner/${id}`, {
                     method: 'DELETE',
                     headers: {
                     'content-type': 'application/json',

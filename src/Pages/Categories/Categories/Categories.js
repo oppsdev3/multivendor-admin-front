@@ -9,7 +9,7 @@ const Categories = () => {
      const token = localStorage.getItem('token')
      useEffect(()=>{
           setLoading(true)
-          fetch('https://multivendorapi.herokuapp.com/api/admin/adminroute/allcategory', {
+          fetch('https://multivendorapex.herokuapp.com/api/admin/adminroute/allcategory', {
                method: 'GET',
                headers: {
                'content-type': 'application/json',

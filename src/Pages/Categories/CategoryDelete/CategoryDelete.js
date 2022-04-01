@@ -5,7 +5,7 @@ const CategoryDelete = ({category}) => {
      const token = localStorage.getItem('token')
      let id = category._id
      const handleClick = e =>{
-               fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/allcategory/${id}`, {
+               fetch(`https://multivendorapex.herokuapp.com/api/admin/adminroute/allcategory/${id}`, {
                     method: 'DELETE',
                     headers: {
                     'content-type': 'application/json',

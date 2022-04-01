@@ -11,7 +11,7 @@ const AdminDetails = ({admin}) => {
      const token = localStorage.getItem('token')
      useEffect(()=>{
           setLoading(true)
-          fetch(`https://multivendorapi.herokuapp.com/api/admin/adminroute/alladmin/${id}`, {
+          fetch(`https://multivendorapex.herokuapp.com/api/admin/adminroute/alladmin/${id}`, {
                method: 'GET',
                headers: {
                'content-type': 'application/json',
